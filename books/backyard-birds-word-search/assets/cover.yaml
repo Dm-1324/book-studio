@@ -1,0 +1,7 @@
+bg: [0.11, 0.29, 0.42]        # deep sky blue
+art_bg: [0.62, 0.80, 0.86]    # pale morning sky
+accent: [0.98, 0.70, 0.30]    # robin-breast orange
+badge: "EXTRA LARGE PRINT"
+features: "EASY MODE  ·  NO BACKWARDS WORDS"
+back_heading: "Easy on the eyes, easy on the mind"
+art_fraction: 0.56

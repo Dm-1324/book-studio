@@ -1,0 +1,24 @@
+{
+  "pen_name": "Brainy Bench Puzzles",
+  "weekly_new_titles": 2,
+  "marketplace": "amazon.com",
+  "claude_cmd": [
+    "claude",
+    "-p"
+  ],
+  "fooocus": {
+    "url": "http://127.0.0.1:7865",
+    "note": "Fooocus must be running (run.bat) before the cover-artist step. Use the same flags/path as on dm-1324."
+  },
+  "pinterest": {
+    "channel_id": "",
+    "board": "Bird Lover Gifts and Puzzles",
+    "queue_target": 8,
+    "per_day": 2,
+    "image_repo_dir": "D:/Projects/reel-media",
+    "image_base_url": "https://raw.githubusercontent.com/Dm-1324/reel-media/main",
+    "buffer_adapter": "",
+    "adapter_path": "D:/Projects/reel-studio/tools",
+    "note": "Fill channel_id and buffer_adapter on dm-1324 from Reel Studio's Buffer code. Free plan: 3 channels, 10 queued posts per channel."
+  }
+}

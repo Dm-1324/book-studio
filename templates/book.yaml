@@ -1,0 +1,33 @@
+# Copied into books/<slug>/book.yaml by the book-planner agent.
+title: "Title Here"
+subtitle: "Subtitle here"
+author: "PEN NAME"            # from config.json pen_name
+series: ""                    # e.g. "Large Print Sports Word Search"
+volume: 1
+year: 2026
+seed: 1                       # change for a new volume so puzzles differ
+
+trim: [8.5, 11]               # inches; KDP paperback, no bleed
+paper: white                  # white | cream (changes spine width)
+price_usd: 9.99               # paperbacks under $9.99 earn 50% instead of 60%
+
+puzzle_type: wordsearch       # wordsearch | sudoku | maze
+difficulty: medium            # easy | medium | hard
+count: 100
+
+# wordsearch only
+grid_size: 15
+words_per_puzzle: 18
+grid_font_size: 20            # large print: >= 16
+list_font_size: 15
+
+# sudoku only
+per_page: 1                   # 1 (large print) or 2
+
+how_to_play: |
+  Find every word from the list in the grid. Words go across, down and
+  diagonally, forwards and backwards. Circle each word when you find it,
+  then tick it off the list. All the answers are at the back of the book.
+
+back_page: |
+  Thank you for choosing this book. We hope it gave you many happy hours.

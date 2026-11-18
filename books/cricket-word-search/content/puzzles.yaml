@@ -1,0 +1,341 @@
+puzzles:
+- title: At the Crease
+  words:
+  - Batter
+  - Crease
+  - Stance
+  - Guard
+  - Bails
+  - Stumps
+  - Wicket
+  - Pitch
+  - Helmet
+  - Gloves
+  - Pads
+  - Grip
+  - Backlift
+  - Footwork
+  - Block
+- title: Fielding Positions
+  words:
+  - Slip
+  - Gully
+  - Point
+  - Cover
+  - Mid-off
+  - Mid-on
+  - Midwicket
+  - Square leg
+  - Fine leg
+  - Third man
+  - Long on
+  - Long off
+  - Short leg
+  - Keeper
+  - Sweeper
+- title: Types of Delivery
+  words:
+  - Seam
+  - Cutter
+  - Spin
+  - Pace
+  - Yorker
+  - Bouncer
+  - Googly
+  - Flipper
+  - Off break
+  - Leg break
+  - Inswinger
+  - Outswinger
+  - Doosra
+  - Slower
+  - Arm ball
+- title: Batting Shots
+  words:
+  - Drive
+  - Cut
+  - Pull
+  - Hook
+  - Sweep
+  - Glance
+  - Flick
+  - Loft
+  - Defend
+  - Leave
+  - Nudge
+  - Scoop
+  - Slog
+  - Paddle
+  - Reverse
+- title: How You're Out
+  words:
+  - Bowled
+  - Caught
+  - Stumped
+  - Run out
+  - Hit wicket
+  - LBW
+  - Retired
+  - Timed out
+  - Obstruction
+  - Appeal
+  - Umpire
+  - Finger
+  - Review
+  - Dismissal
+  - Edge
+- title: The Kit Bag
+  words:
+  - Bat
+  - Ball
+  - Helmet
+  - Gloves
+  - Pads
+  - Thigh pad
+  - Arm guard
+  - Box
+  - Spikes
+  - Cap
+  - Sun hat
+  - Sweater
+  - Whites
+  - Grip cone
+  - Kit bag
+- title: At the Ground
+  words:
+  - Outfield
+  - Boundary
+  - Rope
+  - Pavilion
+  - Sightscreen
+  - Scoreboard
+  - Stand
+  - Turnstile
+  - Pitch
+  - Square
+  - Roller
+  - Covers
+  - Nets
+  - Dressing room
+  - Floodlights
+- title: Match Day
+  words:
+  - Toss
+  - Captain
+  - Innings
+  - Session
+  - Lunch
+  - Tea
+  - Drinks
+  - Over
+  - Maiden
+  - Target
+  - Chase
+  - Follow-on
+  - Declare
+  - Draw
+  - Tie
+- title: Scoring Runs
+  words:
+  - Single
+  - Double
+  - Four
+  - Six
+  - Bye
+  - Extras
+  - Wide
+  - No ball
+  - Century
+  - Fifty
+  - Total
+  - Run rate
+  - Partnership
+  - Scorer
+  - Not out
+- title: Cricket Nations
+  words:
+  - Australia
+  - India
+  - England
+  - Pakistan
+  - Sri Lanka
+  - New Zealand
+  - South Africa
+  - Bangladesh
+  - Ireland
+  - Zimbabwe
+  - Afghanistan
+  - Scotland
+  - Nepal
+  - Netherlands
+  - Kenya
+- title: Weather Watch
+  words:
+  - Rain
+  - Drizzle
+  - Cloud
+  - Sunshine
+  - Bad light
+  - Covers
+  - Puddle
+  - Delay
+  - Damp
+  - Humid
+  - Overcast
+  - Breeze
+  - Dew
+  - Umbrella
+  - Forecast
+- title: Umpire's Signals
+  words:
+  - Signal
+  - Finger
+  - Bye
+  - Six
+  - Wide
+  - No ball
+  - Dead ball
+  - Short run
+  - Penalty
+  - Review
+  - Free hit
+  - Boundary
+  - Powerplay
+  - Last hour
+  - New ball
+- title: The Art of Spin
+  words:
+  - Turn
+  - Flight
+  - Drift
+  - Dip
+  - Loop
+  - Revs
+  - Rough
+  - Spinner
+  - Off spin
+  - Leg spin
+  - Googly
+  - Arm ball
+  - Slider
+  - Dusty
+  - Crease
+- title: Fast Bowling
+  words:
+  - Pace
+  - Speed
+  - Seam
+  - Run-up
+  - Yorker
+  - Bouncer
+  - Reverse
+  - Outswinger
+  - Inswinger
+  - Length
+  - Line
+  - Hostile
+  - Spell
+  - New ball
+  - Corridor
+- title: Behind the Stumps
+  words:
+  - Keeper
+  - Gloves
+  - Stumping
+  - Take
+  - Dive
+  - Catch
+  - Byes
+  - Appeal
+  - Crouch
+  - Stand up
+  - Edge
+  - Chatter
+  - Leg side
+  - Off side
+  - Reflex
+- title: Tea Interval
+  words:
+  - Sandwich
+  - Scones
+  - Cake
+  - Teapot
+  - Cup
+  - Saucer
+  - Biscuit
+  - Milk
+  - Sugar
+  - Lemon
+  - Jam
+  - Cream
+  - Fruit
+  - Chat
+  - Break
+- title: Training Day
+  words:
+  - Nets
+  - Drills
+  - Fitness
+  - Catching
+  - Throwing
+  - Sprints
+  - Stretch
+  - Warm-up
+  - Coach
+  - Video
+  - Bowling machine
+  - Practice
+  - Routine
+  - Focus
+  - Recovery
+- title: The Commentary Box
+  words:
+  - Commentator
+  - Microphone
+  - Radio
+  - Stats
+  - Replay
+  - Highlights
+  - Analysis
+  - Verdict
+  - Camera
+  - Headset
+  - Broadcast
+  - Crowd
+  - Roar
+  - Cheer
+  - Applause
+- title: The Captain's Job
+  words:
+  - Captain
+  - Toss
+  - Field placing
+  - Tactics
+  - Declare
+  - Leader
+  - Huddle
+  - Plan
+  - Morale
+  - Selection
+  - Vice
+  - Respect
+  - Inspire
+  - Spirit
+  - Bowling change
+- title: Victory!
+  words:
+  - Win
+  - Trophy
+  - Medal
+  - Champions
+  - Celebrate
+  - Parade
+  - Lap
+  - Honour
+  - Glory
+  - Teamwork
+  - Series
+  - Final
+  - Cup
+  - History
+  - Cheers

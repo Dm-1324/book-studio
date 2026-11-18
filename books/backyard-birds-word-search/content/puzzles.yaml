@@ -1,0 +1,1069 @@
+puzzles:
+- title: At the Bird Feeder
+  words:
+  - Robin
+  - Sparrow
+  - Finch
+  - Blue tit
+  - Chickadee
+  - Cardinal
+  - Nuthatch
+  - Starling
+  - Wren
+  - Junco
+  - Siskin
+  - Seeds
+  - Suet
+  - Peanuts
+  fact: Chickadees hide seeds and remember where they put them.
+- title: Garden Songbirds
+  words:
+  - Blackbird
+  - Thrush
+  - Warbler
+  - Blackcap
+  - Dunnock
+  - Chaffinch
+  - Greenfinch
+  - Linnet
+  - Bunting
+  - Oriole
+  - Mockingbird
+  - Bluebird
+  - Catbird
+  - Tanager
+  fact: Mockingbirds can copy the songs of dozens of other birds.
+- title: Birds of Prey
+  words:
+  - Hawk
+  - Eagle
+  - Falcon
+  - Kestrel
+  - Osprey
+  - Owl
+  - Buzzard
+  - Kite
+  - Harrier
+  - Vulture
+  - Condor
+  - Talons
+  - Merlin
+  - Hobby
+  fact: A diving peregrine falcon is the fastest animal on Earth.
+- title: Owls at Night
+  words:
+  - Barn owl
+  - Tawny owl
+  - Snowy owl
+  - Little owl
+  - Eagle owl
+  - Screech owl
+  - Hoot
+  - Moonlight
+  - Silent
+  - Feathers
+  - Pellet
+  - Dusk
+  - Midnight
+  - Wise
+  icon: nights_stay
+  fact: Owls can't move their eyes, so they turn their whole head.
+- title: On the Pond
+  words:
+  - Duck
+  - Swan
+  - Goose
+  - Heron
+  - Mallard
+  - Moorhen
+  - Coot
+  - Grebe
+  - Kingfisher
+  - Pelican
+  - Egret
+  - Crane
+  - Gull
+  - Loon
+  icon: waves
+  fact: Ducks waterproof their feathers with oil from a gland by the tail.
+- title: Building a Nest
+  words:
+  - Twigs
+  - Moss
+  - Grass
+  - Feathers
+  - Mud
+  - Eggs
+  - Hatch
+  - Chicks
+  - Nest box
+  - Hedge
+  - Branch
+  - Fledgling
+  - Brood
+  - Clutch
+  icon: egg
+  fact: Some hummingbirds hold their nests together with spider silk.
+- title: Birdsong
+  words:
+  - Chirp
+  - Tweet
+  - Warble
+  - Trill
+  - Whistle
+  - Coo
+  - Caw
+  - Quack
+  - Honk
+  - Hoot
+  - Cheep
+  - Chorus
+  - Dawn
+  - Melody
+  icon: music_note
+  fact: 'Birds sing most at first light: this is called the dawn chorus.'
+- title: The Birdwatcher's Kit
+  words:
+  - Binoculars
+  - Notebook
+  - Pencil
+  - Field guide
+  - Camera
+  - Telescope
+  - Tripod
+  - Flask
+  - Boots
+  - Raincoat
+  - Map
+  - Hide
+  - Patience
+  - Hat
+  icon: visibility
+  fact: Binoculars marked 8x42 make birds look 8 times closer.
+- title: Feathers and Flight
+  words:
+  - Wings
+  - Beak
+  - Tail
+  - Feathers
+  - Soar
+  - Glide
+  - Hover
+  - Flap
+  - Swoop
+  - Perch
+  - Plumage
+  - Crest
+  - Migrate
+  - Talon
+  icon: air
+  fact: Hollow bones help keep many birds light enough to fly.
+- title: Colorful Birds
+  words:
+  - Parrot
+  - Peacock
+  - Flamingo
+  - Toucan
+  - Macaw
+  - Budgie
+  - Canary
+  - Hummingbird
+  - Jay
+  - Oriole
+  - Bullfinch
+  - Kingfisher
+  - Bee eater
+  - Lorikeet
+  fact: Flamingos get their pink color from the food they eat.
+- title: Through the Seasons
+  words:
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
+  - Migration
+  - Flock
+  - Nesting
+  - Molt
+  - Return
+  - South
+  - Journey
+  - Frost
+  - Berries
+  - Feeder
+  icon: park
+  fact: Arctic terns fly from the Arctic to the Antarctic and back each year.
+- title: Birds by the Sea
+  words:
+  - Gull
+  - Puffin
+  - Gannet
+  - Tern
+  - Cormorant
+  - Albatross
+  - Petrel
+  - Plover
+  - Sandpiper
+  - Oystercatcher
+  - Curlew
+  - Skua
+  - Dunlin
+  - Waves
+  icon: waves
+  fact: A puffin can carry ten or more small fish in its beak at once.
+- title: Woodpeckers and Friends
+  words:
+  - Woodpecker
+  - Flicker
+  - Sapsucker
+  - Drumming
+  - Bark
+  - Trunk
+  - Tongue
+  - Beetles
+  - Grubs
+  - Chisel
+  - Tree hole
+  - Acorns
+  - Ants
+  - Wryneck
+  fact: Woodpeckers have long tongues that wrap around the inside of their skull.
+  icon: forest
+- title: The Hummingbird Garden
+  words:
+  - Hummingbird
+  - Nectar
+  - Hover
+  - Feeder
+  - Fuchsia
+  - Salvia
+  - Petunia
+  - Trumpet vine
+  - Bee balm
+  - Honeysuckle
+  - Ruby throat
+  - Wings
+  - Blossom
+  - Sugar water
+  fact: Hummingbirds can fly backwards.
+  icon: local_florist
+- title: Ducks of Every Kind
+  words:
+  - Mallard
+  - Teal
+  - Wigeon
+  - Pintail
+  - Shoveler
+  - Gadwall
+  - Eider
+  - Scoter
+  - Merganser
+  - Goldeneye
+  - Bufflehead
+  - Wood duck
+  - Mandarin
+  - Pochard
+  fact: A male duck is called a drake, and a female is called a hen.
+  icon: waves
+- title: Herons and Waders
+  words:
+  - Heron
+  - Egret
+  - Stork
+  - Ibis
+  - Spoonbill
+  - Bittern
+  - Crane
+  - Flamingo
+  - Avocet
+  - Stilt
+  - Godwit
+  - Curlew
+  - Wading
+  - Marsh
+  fact: Herons often stand completely still while they wait to catch a fish.
+  icon: water_drop
+- title: Crows and Their Cousins
+  words:
+  - Crow
+  - Raven
+  - Rook
+  - Jackdaw
+  - Magpie
+  - Jay
+  - Chough
+  - Nutcracker
+  - Clever
+  - Caw
+  - Black
+  - Glossy
+  - Treetop
+  - Roost
+  fact: Crows can recognize and remember individual human faces.
+- title: Pigeons and Doves
+  words:
+  - Squab
+  - Collared
+  - Coo
+  - Turtle dove
+  - Wood pigeon
+  - Rock dove
+  - Homing
+  - Mourning
+  - Peace
+  - Olive branch
+  - Loft
+  - Racing
+  - Feathers
+  - Gentle
+  fact: Homing pigeons can find their way home from hundreds of miles away.
+- title: Parrots of the World
+  words:
+  - Macaw
+  - Cockatoo
+  - Parakeet
+  - Lovebird
+  - Cockatiel
+  - Lorikeet
+  - Kea
+  - Kakapo
+  - Conure
+  - Budgerigar
+  - Rosella
+  - Galah
+  - Talking
+  - Colorful
+  fact: Some parrots can live for more than 50 years.
+  icon: public
+- title: Penguin Parade
+  words:
+  - Emperor
+  - King
+  - Adelie
+  - Gentoo
+  - Chinstrap
+  - Rockhopper
+  - Macaroni
+  - Little blue
+  - Huddle
+  - Waddle
+  - Ice
+  - Krill
+  - Antarctic
+  - Colony
+  fact: Penguins cannot fly, but they are superb swimmers.
+  icon: ac_unit
+- title: Rainforest Birds
+  words:
+  - Toucan
+  - Hornbill
+  - Quetzal
+  - Macaw
+  - Harpy eagle
+  - Trogon
+  - Tanager
+  - Manakin
+  - Aracari
+  - Canopy
+  - Vines
+  - Humid
+  - Jungle
+  - Cock of the rock
+  fact: Toucans use their big, light bills to reach fruit on thin branches.
+  icon: forest
+- title: Desert Birds
+  words:
+  - Roadrunner
+  - Cactus wren
+  - Quail
+  - Sandgrouse
+  - Thrasher
+  - Elf owl
+  - Vulture
+  - Dunes
+  - Heat
+  - Mesa
+  - Oasis
+  - Sunset
+  - Dry
+  - Lark
+  fact: A roadrunner can run at around 20 miles per hour.
+  icon: wb_sunny
+- title: High in the Mountains
+  words:
+  - Golden eagle
+  - Condor
+  - Ptarmigan
+  - Lammergeier
+  - Dipper
+  - Wallcreeper
+  - Snowcock
+  - Peaks
+  - Cliffs
+  - Alpine
+  - Summit
+  - Thin air
+  - Ridge
+  - Glacier
+  fact: Bar-headed geese fly over the Himalayas when they migrate.
+  icon: landscape
+- title: Winter Visitors
+  words:
+  - Waxwing
+  - Redwing
+  - Fieldfare
+  - Brambling
+  - Snow bunting
+  - Junco
+  - Siskin
+  - Redpoll
+  - Frost
+  - Berries
+  - Holly
+  - Feeder
+  - Snowfall
+  - Cozy
+  fact: In winter, many birds fluff up their feathers to trap warm air.
+  icon: ac_unit
+- title: Spring Arrivals
+  words:
+  - Swallow
+  - Cuckoo
+  - Warbler
+  - Oriole
+  - Tanager
+  - Swift
+  - Martin
+  - Blossom
+  - Nesting
+  - Courtship
+  - Return
+  - Songs
+  - Buds
+  - Rain
+  fact: In spring, many male songbirds sing to claim a territory and attract a mate.
+  icon: local_florist
+- title: Bird Eggs
+  words:
+  - Shell
+  - Yolk
+  - Speckled
+  - Spotted
+  - Oval
+  - Clutch
+  - Incubate
+  - Warm
+  - Hatch
+  - Crack
+  - Blue
+  - Cream
+  - Ostrich
+  - Brood
+  fact: Ostriches lay the largest eggs of any living bird.
+  icon: egg
+- title: Baby Birds
+  words:
+  - Chick
+  - Hatchling
+  - Nestling
+  - Fledgling
+  - Cygnet
+  - Gosling
+  - Duckling
+  - Eaglet
+  - Owlet
+  - Squab
+  - Poult
+  - Down
+  - Gape
+  - Peep
+  fact: A baby swan is called a cygnet.
+  icon: egg
+- title: Bird Group Names
+  words:
+  - Flock
+  - Murder
+  - Parliament
+  - Gaggle
+  - Charm
+  - Murmuration
+  - Skein
+  - Covey
+  - Raft
+  - Colony
+  - Exaltation
+  - Mustering
+  - Unkindness
+  - Party
+  fact: A group of crows is called a murder.
+- title: Feeding Time
+  words:
+  - Seeds
+  - Worms
+  - Berries
+  - Insects
+  - Nectar
+  - Grubs
+  - Fish
+  - Fruit
+  - Suet
+  - Nuts
+  - Peck
+  - Forage
+  - Gizzard
+  - Grit
+  fact: Birds have no teeth, so many swallow small stones to help grind their food.
+  icon: restaurant
+- title: A Garden for Birds
+  words:
+  - Birdbath
+  - Feeder
+  - Nest box
+  - Hedge
+  - Shrubs
+  - Berries
+  - Sunflower
+  - Water
+  - Shelter
+  - Wildflower
+  - Compost
+  - Pond
+  - Perch
+  - Bird table
+  fact: A shallow birdbath gives birds water to drink and bathe in all year.
+  icon: yard
+- title: Parts of a Bird
+  words:
+  - Beak
+  - Crown
+  - Nape
+  - Throat
+  - Breast
+  - Belly
+  - Wing
+  - Tail
+  - Talons
+  - Keel
+  - Crop
+  - Eye ring
+  - Primaries
+  - Plumage
+  fact: A bird's beak is bone covered with keratin, like our fingernails.
+- title: Shades of Feathers
+  words:
+  - Crimson
+  - Scarlet
+  - Golden
+  - Azure
+  - Emerald
+  - Russet
+  - Ochre
+  - Ivory
+  - Slate
+  - Copper
+  - Violet
+  - Lemon
+  - Chestnut
+  - Ebony
+  fact: Blue feathers get their color from tiny structures that scatter light, not
+    blue pigment.
+  icon: auto_awesome
+- title: Birds of the Night
+  words:
+  - Nightjar
+  - Nighthawk
+  - Whippoorwill
+  - Barn owl
+  - Kiwi
+  - Night heron
+  - Potoo
+  - Frogmouth
+  - Moon
+  - Stars
+  - Darkness
+  - Silent
+  - Moths
+  - Dusk
+  fact: Nightjars hunt moths and other insects at dusk and at night.
+  icon: nights_stay
+- title: Shorebirds
+  words:
+  - Sandpiper
+  - Plover
+  - Turnstone
+  - Knot
+  - Sanderling
+  - Dunlin
+  - Oystercatcher
+  - Redshank
+  - Godwit
+  - Curlew
+  - Tideline
+  - Mudflat
+  - Probe
+  - Waves
+  fact: Many shorebirds probe the mud with long bills to find worms and shellfish.
+  icon: waves
+- title: Down on the Farm
+  words:
+  - Hen
+  - Rooster
+  - Chick
+  - Turkey
+  - Goose
+  - Duck
+  - Guinea fowl
+  - Coop
+  - Eggs
+  - Barn
+  - Cockerel
+  - Bantam
+  - Peck
+  - Scratch
+  fact: There are more chickens on Earth than any other kind of bird.
+  icon: home
+- title: Birds of Australia
+  words:
+  - Kookaburra
+  - Emu
+  - Cockatoo
+  - Galah
+  - Lyrebird
+  - Magpie lark
+  - Rosella
+  - Bowerbird
+  - Fairy wren
+  - Cassowary
+  - Lorikeet
+  - Budgie
+  - Brolga
+  - Outback
+  fact: The kookaburra's call sounds like loud laughter.
+  icon: public
+- title: Birds of Africa
+  words:
+  - Ostrich
+  - Hornbill
+  - Weaver
+  - Sunbird
+  - Bee eater
+  - Lovebird
+  - Hamerkop
+  - Shoebill
+  - Turaco
+  - Oxpecker
+  - Guineafowl
+  - Secretary bird
+  - Savanna
+  - Ibis
+  fact: Weaver birds knot strands of grass into hanging nests.
+  icon: public
+- title: Birds of Asia
+  words:
+  - Peafowl
+  - Myna
+  - Bulbul
+  - Hoopoe
+  - Kingfisher
+  - Sunbird
+  - Drongo
+  - Barbet
+  - Koel
+  - Tailorbird
+  - Hornbill
+  - Magpie robin
+  - Pheasant
+  - Sarus crane
+  fact: The peacock is the national bird of India.
+  icon: public
+- title: Birds of North America
+  words:
+  - Cardinal
+  - Blue jay
+  - Chickadee
+  - Junco
+  - Bald eagle
+  - Bluebird
+  - Grackle
+  - Killdeer
+  - Mockingbird
+  - Titmouse
+  - Towhee
+  - Phoebe
+  - Meadowlark
+  - Waxwing
+  fact: In many places, northern cardinals stay all year instead of migrating.
+  icon: public
+- title: Birds of Europe
+  words:
+  - Robin
+  - Wren
+  - Blackbird
+  - Song thrush
+  - Blue tit
+  - Great tit
+  - Chaffinch
+  - Bullfinch
+  - Jackdaw
+  - Skylark
+  - Nightingale
+  - Goldcrest
+  - Hoopoe
+  - Bee eater
+  fact: European robins sometimes sing at night near bright streetlights.
+  icon: public
+- title: Giants of the Bird World
+  words:
+  - Ostrich
+  - Emu
+  - Rhea
+  - Cassowary
+  - Condor
+  - Albatross
+  - Pelican
+  - Swan
+  - Bustard
+  - Crane
+  - Turkey
+  - Eagle
+  - Marabou
+  - Moa
+  fact: The ostrich is the largest and heaviest living bird.
+- title: Tiny Birds
+  words:
+  - Hummingbird
+  - Kinglet
+  - Goldcrest
+  - Firecrest
+  - Wren
+  - Bushtit
+  - Sunbird
+  - Warbler
+  - Chickadee
+  - Pygmy owl
+  - Elf owl
+  - Gnatcatcher
+  - Tiny
+  - Feather
+  fact: The bee hummingbird of Cuba is the smallest bird in the world.
+- title: Amazing Nests
+  words:
+  - Weaver
+  - Ovenbird
+  - Swiftlet
+  - Tailorbird
+  - Bowerbird
+  - Mud
+  - Twigs
+  - Moss
+  - Spider silk
+  - Cup
+  - Burrow
+  - Dome
+  - Hanging
+  - Lining
+  fact: Some swiftlets build their nests almost entirely from their own saliva.
+  icon: egg
+- title: Bird Behavior
+  words:
+  - Preen
+  - Roost
+  - Perch
+  - Molt
+  - Forage
+  - Courtship
+  - Display
+  - Bathe
+  - Dust bath
+  - Flock
+  - Migrate
+  - Sing
+  - Nest
+  - Defend
+  fact: Birds preen to keep their feathers clean, tidy and waterproof.
+- title: Up in the Sky
+  words:
+  - Clouds
+  - Thermal
+  - Updraft
+  - Glide
+  - Soar
+  - Altitude
+  - Wind
+  - Formation
+  - Horizon
+  - Sunrise
+  - Hover
+  - Wingspan
+  - Breeze
+  - Blue
+  fact: Geese fly in a V shape, which helps them save energy.
+  icon: cloud
+- title: The Long Migration
+  words:
+  - Compass
+  - Stars
+  - Route
+  - Stopover
+  - Flyway
+  - Coast
+  - Mountains
+  - Ocean
+  - Thousands
+  - Miles
+  - Return
+  - Winter home
+  - Instinct
+  - Journey
+  fact: Some birds use the stars to find their way when they migrate at night.
+  icon: flight
+- title: A Day of Birdwatching
+  words:
+  - Sunrise
+  - Trail
+  - Path
+  - Bench
+  - Notebook
+  - Binoculars
+  - Quiet
+  - Patience
+  - Spotted
+  - Rustle
+  - Call
+  - Checklist
+  - Picnic
+  - Sunset
+  fact: Early morning is often the best time to see and hear birds.
+  icon: visibility
+- title: My Bird Journal
+  words:
+  - Notes
+  - Sketch
+  - Date
+  - Weather
+  - Count
+  - Species
+  - Location
+  - Life list
+  - Pencil
+  - Colors
+  - Sighting
+  - Habitat
+  - Behavior
+  - Memories
+  fact: A list of all the birds you have ever seen is called a life list.
+  icon: edit_note
+- title: Bird Photography
+  words:
+  - Camera
+  - Lens
+  - Zoom
+  - Focus
+  - Shutter
+  - Tripod
+  - Light
+  - Hide
+  - Patience
+  - Snapshot
+  - Frame
+  - Portrait
+  - Close up
+  - Album
+  fact: Bird photographers often use long lenses so they can stay far away.
+  icon: photo_camera
+- title: Bird Words and Sayings
+  words:
+  - Early bird
+  - Eagle eyed
+  - Nest egg
+  - Crows feet
+  - Goose bumps
+  - Hawkish
+  - Lame duck
+  - Parrot
+  - Swan song
+  - Owlish
+  - Henpecked
+  - Pecking order
+  - Feather
+  - Birdbrain
+  fact: Eagles can spot small prey from very far away.
+  icon: menu_book
+- title: Lakes and Rivers
+  words:
+  - Dipper
+  - Kingfisher
+  - Osprey
+  - Grebe
+  - Coot
+  - Moorhen
+  - Loon
+  - Cormorant
+  - Heron
+  - Sand martin
+  - Reeds
+  - Ripple
+  - Current
+  - Riverbank
+  fact: Dippers can walk underwater along stream beds to find food.
+  icon: waves
+- title: A Woodland Walk
+  words:
+  - Woodpecker
+  - Jay
+  - Treecreeper
+  - Nuthatch
+  - Tawny owl
+  - Woodcock
+  - Thrush
+  - Oak
+  - Ferns
+  - Acorns
+  - Canopy
+  - Leaves
+  - Moss
+  - Trail
+  fact: Nuthatches can climb headfirst down tree trunks.
+  icon: forest
+- title: Meadow and Field
+  words:
+  - Skylark
+  - Meadowlark
+  - Pipit
+  - Quail
+  - Pheasant
+  - Partridge
+  - Kestrel
+  - Barn owl
+  - Bobolink
+  - Grass
+  - Wildflowers
+  - Hay
+  - Hedgerow
+  - Poppies
+  fact: Skylarks sing while hovering high in the air.
+  icon: grass
+- title: City Birds
+  words:
+  - Pigeon
+  - Sparrow
+  - Starling
+  - Gull
+  - Crow
+  - Peregrine
+  - Swift
+  - Rooftop
+  - Park
+  - Bench
+  - Crumbs
+  - Chimney
+  - Ledge
+  - Fountain
+  fact: Peregrine falcons nest on tall city buildings in many places.
+- title: Birds in the Snow
+  words:
+  - Snow bunting
+  - Ptarmigan
+  - Snowy owl
+  - Crossbill
+  - Grouse
+  - Redpoll
+  - Junco
+  - Gyrfalcon
+  - Frost
+  - Icicle
+  - Blizzard
+  - Tracks
+  - Pine
+  - Shiver
+  fact: Ptarmigans turn white in winter to blend in with the snow.
+  icon: ac_unit
+- title: Finches and Buntings
+  words:
+  - Goldfinch
+  - Greenfinch
+  - Chaffinch
+  - Bullfinch
+  - Hawfinch
+  - Linnet
+  - Siskin
+  - Redpoll
+  - Crossbill
+  - Yellowhammer
+  - Reed bunting
+  - Indigo bunting
+  - Seeds
+  - Thistle
+  fact: Crossbills use their crossed beaks to pry seeds out of pine cones.
+- title: Swallows and Swifts
+  words:
+  - Swallow
+  - Swift
+  - House martin
+  - Sand martin
+  - Mud nest
+  - Insects
+  - Eaves
+  - Barn
+  - Forked tail
+  - Aerial
+  - Summer
+  - Swoop
+  - Chatter
+  - Screaming
+  fact: Swifts can stay in the air for months without landing.
+  icon: flight
+- title: Island Birds
+  words:
+  - Kiwi
+  - Kakapo
+  - Puffin
+  - Frigatebird
+  - Booby
+  - Tropicbird
+  - Dodo
+  - Albatross
+  - Petrel
+  - Shearwater
+  - Nene
+  - Palm
+  - Lagoon
+  - Reef
+  fact: The kiwi lays an egg that is very large for the size of its body.
+  icon: waves
+- title: Legendary Birds
+  words:
+  - Phoenix
+  - Caladrius
+  - Roc
+  - Griffin
+  - Firebird
+  - Garuda
+  - Simurgh
+  - Harpy
+  - Fenghuang
+  - Ashes
+  - Myth
+  - Legend
+  - Fable
+  - Wings
+  fact: In legend, the phoenix rises again from its own ashes.
+  icon: auto_awesome
+- title: A Peaceful Morning
+  words:
+  - Sunrise
+  - Dew
+  - Chorus
+  - Coffee
+  - Tea
+  - Garden
+  - Calm
+  - Birdsong
+  - Quiet
+  - Robin
+  - Window
+  - Breeze
+  - Gentle
+  - Smile
+  fact: The dawn chorus is often at its loudest in spring.
+  icon: wb_sunny

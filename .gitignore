@@ -1,0 +1,6 @@
+books/*/dist/
+__pycache__/
+*.pyc
+config.local.json
+logs/
+research/pins-posted.json

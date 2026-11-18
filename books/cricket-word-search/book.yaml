@@ -1,0 +1,44 @@
+title: "Cricket Word Search for Adults"
+subtitle: "Large Print Puzzles on Shots, Fielding, Grounds and Match-Day Traditions"
+author: "Brainy Bench Puzzles"   # placeholder pen name
+series: "Large Print Sports Word Search"
+also_in_series:
+  - "Football Word Search for Adults (coming soon)"
+  - "Tennis Word Search for Adults (coming soon)"
+volume: 1
+year: 2026
+seed: 1
+trim: [8.5, 11]
+paper: white
+price_usd: 9.99
+puzzle_type: wordsearch
+difficulty: hard
+count: 20                     # sample build; the full book uses 100
+grid_size: 15
+words_per_puzzle: 15
+grid_font_size: 20
+list_font_size: 15
+how_to_play: |
+  Find every word from the list in the grid. Words can run across, down or
+  diagonally, and they can be written forwards or backwards.
+
+  Words made of two or more parts, such as SQUARE LEG, appear in the grid
+  without the space: SQUARELEG.
+
+  Circle each word as you find it, then tick its box in the list. All the
+  answers are at the back of the book, four puzzles to a page.
+back_page: |
+  Thank you for choosing this book. We hope it gave you many happy hours at
+  the crease.
+back_blurb: |
+  Twenty large-print word searches for anyone who loves the game, from
+  fielding positions and batting shots to tea intervals and rain delays.
+
+  Big, bold letters on clean white pages are easy on the eyes. Words run in
+  every direction to keep you guessing, and every answer is at the back.
+
+  A thoughtful gift for cricket-loving parents, grandparents and friends.
+design:
+  style: framed
+  icon: sports_cricket
+  badge: "LARGE PRINT"

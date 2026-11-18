@@ -1,0 +1,60 @@
+title: "Backyard Birds Word Search for Seniors"
+subtitle: "Easy Large Print Puzzles with No Backwards Words, for Relaxing Birdwatching Fun"
+author: "Brainy Bench Puzzles" 
+series: "Easy Large Print Nature Word Search"
+also_in_series:
+  - "Garden Flowers Word Search (coming soon)"
+  - "Seashore Word Search (coming soon)"
+volume: 1
+year: 2026
+seed: 7
+trim: [8.5, 11]
+paper: white
+ink: standard_color        # bw | standard_color | premium_color
+price_usd: 12.99
+puzzle_type: wordsearch
+difficulty: easy              # across and down only
+count: 60
+grid_size: 13
+words_per_puzzle: 14
+grid_font_size: 24
+list_font_size: 16
+how_to_play: |
+  Find every word from the list in the grid. In this book every word reads
+  the easy way: from left to right, or from top to bottom. There are no
+  backwards words and no diagonals.
+
+  Names with two parts, such as BLUE TIT, appear in the grid without the
+  space: BLUETIT.
+
+  Circle each word as you find it, then tick its box in the list. All the
+  answers are at the back of the book.
+back_page: |
+  Thank you for choosing this book. We hope it brought a little birdsong
+  to your day.
+back_blurb: |
+  Sixty extra-large-print word searches for anyone who loves watching
+  birds at the feeder, in the garden or on a quiet walk.
+
+  Every word reads the easy way, left to right or top to bottom, so you can
+  relax and enjoy the hunt. Big, bold letters, one puzzle per page and all
+  the answers at the back.
+
+  A gentle, thoughtful gift for birdwatchers, parents and grandparents.
+design:
+  style: framed
+  icon: bird
+  palette: garden
+  badge: "EXTRA LARGE PRINT  ·  EASY MODE"
+  tracker: true
+  certificate: true
+  bonus_url: ""             # set when the free-puzzles sign-up page exists
+amazon_url: ""                # set after KDP publishes the book; pins are only posted once this is set
+pins:
+  headline: "60 Easy Bird Word Searches in Large Print"
+  tagline: "Full color, no backwards words, answers included"
+  inside_line: "Big, bold puzzles with a bird fact on every page"
+  gift_line: "a relaxing gift for bird lovers and grandparents"
+  board: "Bird Lover Gifts and Puzzles"
+  inside_pages: [10, 4, 9]
+  description: "60 extra-large-print bird word searches in full color. Every word reads left to right or top to bottom, a bird fact on every page, a puzzle tracker and all the answers. A gentle gift for birdwatchers, parents and grandparents."
