@@ -22,7 +22,9 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-from build_book import balanced_lines  # noqa: E402  (also registers fonts)
+from build_book import balanced_lines, draw_wordsearch_grid  # noqa: E402  (also registers fonts)
+from ornaments import draw_icon  # noqa: E402
+pdfmetrics.registerFont(TTFont("Serif", str(ROOT / "assets" / "fonts" / "BreeSerif-Regular.ttf")))
 
 BLEED = 0.125 * inch
 SAFE = 0.375 * inch  # keep text this far from trim edges
@@ -82,44 +84,54 @@ def build(book_dir):
     else:
         _placeholder_art(c, front_x, tw, th, style, book_dir, cfg)
 
-    # ---- front: badge, title, subtitle, author ----
+    # ---- front: like a real book: one strong title, a short subtitle, a small useful badge ----
     left = front_x + SAFE
     width = tw - 2 * SAFE
     mid = front_x + tw / 2
     top = BLEED + th - SAFE
-    rgb(c, style["accent"])
-    c.roundRect(left, top - 30, pdfmetrics.stringWidth(style["badge"], "BodyBold", 14) + 28, 30, 15, stroke=0, fill=1)
-    rgb(c, style["bg"])
-    c.setFont("BodyBold", 14)
-    c.drawString(left + 14, top - 21, style["badge"])
-
+    badge = style.get("badge")
+    if badge:
+        rgb(c, style["accent"])
+        c.roundRect(left, top - 30, pdfmetrics.stringWidth(badge, "BodyBold", 14) + 28, 30, 15, stroke=0, fill=1)
+        rgb(c, style["bg"])
+        c.setFont("BodyBold", 14)
+        c.drawString(left + 14, top - 21, badge)
+    y = top - 58
+    kicker = style.get("kicker")
+    if kicker:
+        rgb(c, style["accent"])
+        c.setFont("BodyBold", 15)
+        c.drawCentredString(mid, y - 10, kicker.upper())
+        y -= 34
     rgb(c, style["text"])
-    size = 58
+    size = 84
     lines = balanced_lines(cfg["title"].upper(), "Display", size, width)
-    while len(lines) > 2 and size > 40:
-        size -= 4
+    while (len(lines) > 2 or max(pdfmetrics.stringWidth(ln, "Display", size) for ln in lines) > width) and size > 40:
+        size -= 2
         lines = balanced_lines(cfg["title"].upper(), "Display", size, width)
-    y = top - 60 - size * 0.8
+    y -= size * 0.8
     c.setFont("Display", size)
     for ln in lines:
         c.drawCentredString(mid, y, ln)
-        y -= size * 1.05
+        y -= size * 1.02
     rgb(c, style["accent"])
-    c.rect(mid - 60, y + size * 0.35, 120, 4, stroke=0, fill=1)
+    c.rect(mid - 60, y + size * 0.42, 120, 4, stroke=0, fill=1)
     rgb(c, style["text"])
-    sub = balanced_lines(cfg["subtitle"], "Body", 20, width * 0.9)
-    y -= 10
-    c.setFont("Body", 20)
+    y -= 14
+    sub_size = 26
+    sub = balanced_lines(cfg["subtitle"], "Serif", sub_size, width * 0.92)
+    c.setFont("Serif", sub_size)
     for ln in sub:
         c.drawCentredString(mid, y, ln)
-        y -= 27
+        y -= sub_size * 1.25
     art_top = BLEED + th * ART_FRACTION
-    if y - 8 < art_top + 24:
-        raise SystemExit("front cover text runs into the art area; shorten the subtitle")
-    features = style.get("features") or f"{info['count']} PUZZLES  \u00b7  ANSWERS INCLUDED"
-    rgb(c, style["accent"])
-    c.setFont("BodyBold", 17)
-    c.drawCentredString(mid, y - 8, features)
+    if y < art_top + 10:
+        raise SystemExit("front cover text runs into the art area; shorten the title or subtitle")
+    features = style.get("features")
+    if features:
+        rgb(c, style["accent"])
+        c.setFont("BodyBold", 17)
+        c.drawCentredString(mid, y - 4, features)
     # author on a band at the bottom
     rgb(c, style["bg"])
     c.rect(front_x, 0, tw + BLEED, BLEED + 0.7 * inch, stroke=0, fill=1)
@@ -139,23 +151,60 @@ def build(book_dir):
         c.drawCentredString(0, -fs * 0.35, f"{cfg['title'].upper()}   ·   {cfg['author']}")
         c.restoreState()
 
-    # ---- back ----
+    # ---- back: hook, short blurb, "inside this book" ticks, a tiny teaser puzzle, publisher ----
     bx = BLEED + SAFE
     bw = tw - 2 * SAFE
-    by = BLEED + th - SAFE - 40
-    blurb = style["blurb"] or cfg.get("back_blurb", "")
-    if blurb:
-        c.setFont("Display", 26)
+    by = BLEED + th - SAFE - 46
+    hook = style.get("back_heading", "What's inside")
+    rgb(c, style["accent"])
+    hs = 34
+    for ln in balanced_lines(hook, "Display", hs, bw):
+        c.setFont("Display", hs)
+        c.drawString(bx, by, ln)
+        by -= hs * 1.15
+    by -= 14
+    rgb(c, style["text"])
+    blurb = style.get("blurb") or cfg.get("back_blurb", "")
+    for para in blurb.strip().split("\n\n"):
+        for ln in _wrap(" ".join(para.split()), "Serif", 18, bw):
+            c.setFont("Serif", 18)
+            c.drawString(bx, by, ln)
+            by -= 26
+        by -= 12
+    bullets = style.get("back_bullets") or []
+    if bullets:
+        by -= 6
         rgb(c, style["accent"])
-        c.drawString(bx, by, style.get("back_heading", "What's inside"))
-        rgb(c, style["text"])
-        by -= 44
-        for para in blurb.strip().split("\n\n"):
-            for ln in _wrap(para, "Body", 17, bw):
-                c.setFont("Body", 17)
-                c.drawString(bx, by, ln)
-                by -= 25
-            by -= 12
+        c.setFont("BodyBold", 15)
+        c.drawString(bx, by, "INSIDE THIS BOOK")
+        by -= 32
+        for item in bullets:
+            draw_icon(c, "check_circle", bx, by - 5, 22, grey=None, rgb=tuple(style["accent"]))
+            rgb(c, style["text"])
+            c.setFont("Body", 17)
+            c.drawString(bx + 32, by, item)
+            by -= 30
+    # teaser: a tiny real word search ("Try one!"), bottom-left; bottom-right stays clear for the barcode
+    teaser = style.get("teaser")
+    if teaser:
+        from puzzles.wordsearch import make_wordsearch
+        import random
+        ws = make_wordsearch([teaser], 6, cfg.get("difficulty", "easy"), random.Random("teaser"))
+        card = 2.0 * inch
+        cx0 = bx
+        cy0 = max(BLEED + 0.95 * inch, by - 30 - card - 24)          # just under the checklist
+        rgb(c, style["accent"])
+        c.setFont("BodyBold", 15)
+        c.drawString(cx0, cy0 + card + 14, f"TRY ONE: FIND {teaser.upper()}")
+        rgb(c, [1, 1, 1])
+        c.roundRect(cx0, cy0, card, card, 14, stroke=0, fill=1)
+        cell = (card - 30) / 6
+        draw_wordsearch_grid(c, ws, cx0 + 15, cy0 + card - 15, cell, cell * 0.6, frame_col=tuple(style["accent"]),
+                             ink=tuple(style["bg"]))
+    rgb(c, style["text"])
+    draw_icon(c, "bird", bx, BLEED + 0.32 * inch, 30, grey=None, rgb=tuple(style["accent"]))
+    c.setFont("BodyBold", 15)
+    c.drawString(bx + 38, BLEED + 0.42 * inch, cfg["author"])
     # barcode area: KDP prints its barcode bottom-right of the back cover (2 x 1.2 in). Keep it clear.
     c.save()
     _front_png(book_dir, out, tw, spine)

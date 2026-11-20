@@ -32,13 +32,3 @@
 **PASS** (24/24 passed)
 
 Print cost uses Amazon.com rates for this ink; confirm in KDP's pricing calculator before publishing.
-
-## Post-READY fixes (2026-11-20, Claude)
-
-From the book-checker's non-blocking notes:
-1. Cover grid now uses the book's own difficulty (easy): only across/down words, matching "no backwards words". FIXED in tools/build_cover.py.
-2. Puzzle 30: BIRD TABLE -> SEED TRAY. FIXED.
-3. Puzzle 15: POCHARD, MANDARIN -> REDHEAD, CANVASBACK (US ducks). FIXED. All three added to check_book's UK-only list.
-4. Slashed/dotted zeros: Atkinson Hyperlegible draws zero that way on purpose so it can't be mistaken for the letter O. Kept.
-
-Re-checked after the fixes: check_book 23/23 PASS (+1 WARN, already judged by the book-checker); pages 19, 34 and the cover viewed by Claude. READY kept.

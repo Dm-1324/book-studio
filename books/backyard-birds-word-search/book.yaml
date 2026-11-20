@@ -1,7 +1,7 @@
-title: "Backyard Birds Word Search for Seniors"
-subtitle: "Easy Large Print Puzzles with No Backwards Words, for Relaxing Birdwatching Fun"
+title: "Wings & Words"
+subtitle: "60 Backyard Bird Word Searches"
 author: "Brainy Bench Puzzles" 
-series: "Easy Large Print Nature Word Search"
+series: "Brainy Bench Nature Puzzles"
 also_in_series:
   - "Garden Flowers Word Search (coming soon)"
   - "Seashore Word Search (coming soon)"
@@ -33,26 +33,24 @@ back_page: |
   Thank you for choosing this book. We hope it brought a little birdsong
   to your day.
 back_blurb: |
-  Sixty extra-large-print word searches for anyone who loves watching
-  birds at the feeder, in the garden or on a quiet walk.
+  From the chickadee at your feeder to the owl calling after dark, every page
+  of Wings & Words opens a new corner of the bird world to explore.
 
-  Every word reads the easy way, left to right or top to bottom, so you can
-  relax and enjoy the hunt. Big, bold letters, one puzzle per page and all
-  the answers at the back.
-
-  A gentle, thoughtful gift for birdwatchers, parents and grandparents.
+  Sixty bright, full-color puzzles, each with a bird fact to enjoy once you've
+  circled the last word. Perfect for a quiet morning, a long trip, or a gift
+  for the bird lover in your life.
 design:
   style: illustrated       # illustrated | framed | plain
   mascot: bird              # little bird perched on every grid
   icon: bird
   palette: garden
-  badge: "EXTRA LARGE PRINT  ·  EASY MODE"
+  badge: "LARGE PRINT"
   tracker: true
   certificate: true
   bonus_url: ""             # set when the free-puzzles sign-up page exists
 amazon_url: ""                # set after KDP publishes the book; pins are only posted once this is set
 pins:
-  headline: "60 Easy Bird Word Searches in Large Print"
+  headline: "Wings & Words: 60 Backyard Bird Word Searches"
   tagline: "Full color, no backwards words, answers included"
   inside_line: "Big, bold puzzles with a bird fact on every page"
   gift_line: "a relaxing gift for bird lovers and grandparents"

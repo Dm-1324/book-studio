@@ -1,7 +1,13 @@
 bg: [0.11, 0.29, 0.42]        # deep sky blue
 art_bg: [0.62, 0.80, 0.86]    # pale morning sky
 accent: [0.98, 0.70, 0.30]    # robin-breast orange
-badge: "EXTRA LARGE PRINT"
-features: "60 PUZZLES  ·  ANSWERS INCLUDED"
-back_heading: "Easy on the eyes, easy on the mind"
-art_fraction: 0.56
+badge: "LARGE PRINT"
+art_fraction: 0.52
+back_heading: "Grab a pencil. The birds are waiting."
+back_bullets:
+  - "60 bird-themed puzzles in full color"
+  - "Big, clear letters on every page"
+  - "Words run left to right or top to bottom"
+  - "A \"Did you know?\" bird fact on every page"
+  - "All the answers at the back"
+teaser: "Robin"

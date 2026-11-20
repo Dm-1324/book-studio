@@ -1,11 +1,12 @@
-# KDP listing: Backyard Birds Word Search for Seniors
+# KDP listing: Wings & Words
 
 Full edition: 60 puzzles, 82 pages, standard color. Ready to upload once the visual check passes.
 
 ## Paperback details
-- **Book title:** Backyard Birds Word Search for Seniors
-- **Subtitle:** Easy Large Print Puzzles with No Backwards Words, for Relaxing Birdwatching Fun
-- **Series:** Easy Large Print Nature Word Search (volume 1)
+- **Book title:** Wings & Words
+- **Subtitle:** 60 Backyard Bird Word Searches
+  (KDP: the title and subtitle on the cover must match these fields exactly.)
+- **Series:** Brainy Bench Nature Puzzles (volume 1)
 - **Author (pen name):** Brainy Bench Puzzles
 - **Description:**
 
@@ -24,13 +25,13 @@ Inside you'll find:
 A gentle, thoughtful gift for birdwatchers, parents and grandparents.
 
 - **Categories (pick 2, confirm in KDP's picker):** Games & Activities > Word Search; Nature > Birdwatching Guides
-- **Keywords (7 boxes):**
-  1. bird word search for adults large print
-  2. birdwatching gifts for seniors
-  3. easy word find puzzles for elderly
-  4. bird lover gifts for women
-  5. no backwards words word search
-  6. nature puzzle book for grandparents
+- **Keywords (7 boxes):** (the search phrases moved here from the old title)
+  1. large print word search for seniors
+  2. bird word search for adults
+  3. birdwatching gifts for women and men
+  4. easy word find no backwards words
+  5. bird lover gifts for grandparents
+  6. nature puzzle book for adults
   7. extra large print activity book
 - **Low-content book:** No
 - **Large print:** Yes
