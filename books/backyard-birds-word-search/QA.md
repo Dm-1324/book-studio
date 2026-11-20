@@ -12,15 +12,17 @@
 | PASS | Puzzle count matches book.yaml | 60 puzzles |
 | PASS | Cover size matches page count | 17.435 x 11.250 in (spine 0.185 in) |
 | PASS | Royalty is positive | $12.99 x 60% - $4.30 print = $3.50 per copy |
+| PASS | Layout: no text overlaps or runs past its box |  |
+| PASS | Word lists: each word written the same way everywhere |  |
+| PASS | Word lists: clean words and titles (letters only, titles <= 28 chars) |  |
+| PASS | Puzzle titles are all different |  |
+| PASS | Spelling: US English throughout (book is for Amazon.com) |  |
+| PASS | No placeholder or TODO text left |  |
+| PASS | Listing: puzzle count matches the book | listing says [60], book has 60 |
+| PASS | Listing: AI disclosure filled in |  |
+| PASS | Listing: pen name matches book.yaml |  |
+| FAIL | Facts: all 60 verified with a source (FACTS.md) | 60 not verified, e.g. 'Chickadees hide seeds and remember where they put them.' |
 
-**PASS** (8/8 passed)
+**FAIL** (17/18 passed)
 
 Print cost uses Amazon.com rates for this ink; confirm in KDP's pricing calculator before publishing.
-## Visual check (full edition, 60 puzzles)
-
-Pages viewed: 1, 3, 4 (tracker, 60 circles), 6, 10, 36 (two-line fact), 45, 54 (long words), 57, 77 (answers), 82, cover.
-- PASS: every page framed, colours cycle, facts readable, answers match puzzle numbers.
-- FIXED: spine text removed (0.185 in spine is too thin for KDP's 0.0625 in clearance); "Colour" -> "Color" for the US.
-- Facts: 60 widely documented bird facts, checked by Claude from general knowledge (no web check). Run the fact-checker agent on dm-1324 before upload.
-
-**PASS**

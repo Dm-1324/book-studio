@@ -69,8 +69,12 @@ def make_book(slug):
         agent(f"Use the cover-artist agent for {book}.", "cover art")
         if tool("build_cover", book):
             continue
+        pz = ROOT / book / "content" / "puzzles.yaml"
+        if DRY or (pz.exists() and "fact:" in pz.read_text(encoding="utf-8")):
+            agent(f"Use the fact-checker agent for {book}. If it changed any fact, rebuild with "
+                  f"python tools/build_book.py {book}.", "fact check")
         tool("check_book", book)
-        agent(f"Use the book-checker agent for {book}.", "visual check")
+        agent(f"Use the book-checker agent for {book}.", "proofread every page")
         if (ROOT / book / "READY").exists() or DRY:
             agent(f"Use the listing-writer agent for {book}.", "listing")
             return True

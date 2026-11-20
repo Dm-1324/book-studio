@@ -27,7 +27,8 @@ Track 2 (later): niche non-fiction. Track 3 (later): genre fiction via Book Gene
 | 2 Plan | `book-planner` agent | chosen niche | `books/<slug>/brief.md`, `book.yaml` |
 | 3 Content | `wordlist-writer` agent + `tools/build_book.py` | brief, book.yaml | `content/puzzles.yaml`, `dist/interior.pdf` |
 | 4 Cover | `cover-artist` agent + Fooocus + `tools/build_cover.py` | brief, interior page count | `assets/cover-art.png`, `dist/cover.pdf` |
-| 5 Check | `tools/check_book.py` then `book-checker` agent (views pages) | dist/ | `QA.md` |
+| 5a Facts | `fact-checker` agent (web sources, never memory) | puzzles.yaml facts | `FACTS.md`, fixed facts |
+| 5b Check | `tools/check_book.py` (automatic proofreading) then `book-checker` agent (views every page) | dist/ | `QA.md` |
 | 6 Listing | `listing-writer` agent | brief, research | `listing.md` |
 | 7 Ready | batch | QA pass | empty file `READY` (or `REJECTED.md` with reasons) |
 
@@ -46,17 +47,34 @@ python tools/render_pages.py books/<slug> 1,5,30 # PNGs of pages for the book-ch
 ## KDP print facts used by the tools (paperback, black & white, white paper)
 
 - Trim 8.5 x 11 in, no bleed. Inside (gutter) margin >= 0.375 in for 24-150 pages,
-  >= 0.5 in for 151-300 pages; outside margins >= 0.25 in. We use 0.75 in / 0.6 in.
+  >= 0.5 in for 151-300 pages; outside margins >= 0.25 in. We use 0.75 in inside, 0.6 in outside, 0.5 in top/bottom.
 - Minimum 24 pages. Page count is even.
 - Spine width = pages x 0.002252 in. Cover = 0.125 bleed + back + spine + front + 0.125 bleed,
   height 11.25 in. Spine text only when the book has 79+ pages.
 - All fonts embedded (the tools only use the TTFs in `assets/fonts`, all SIL OFL).
 
+## Automatic proofreading (tools/check_book.py)
+
+Besides KDP specs and puzzle correctness, check_book FAILs on: any layout issue the builder recorded in
+dist/layout.json (text past a panel edge, word-list column collisions, header titles that don't fit next to
+the stars/icon), a word written two ways in different puzzles, UK spelling in an en-US book, unclean or
+duplicate titles, placeholder/TODO text, a listing whose puzzle count/pen name/AI disclosure don't match,
+and any fact not marked VERIFIED with a source link in FACTS.md. When the book-checker finds a problem these
+checks missed, add a check for it here so it can never come back.
+
 ## Interior design
 
-`tools/design.py` ("framed" style, the default): page frame, header band with puzzle-number badge and a theme
-icon, word-list panel, leafy footer with page number, worked example on the how-to page.
-Set per book in `book.yaml` -> `design: {style, icon, badge}`; per puzzle `icon:` in `content/puzzles.yaml`.
+`tools/design.py` styles (book.yaml `design.style`):
+- `illustrated` (current house style): pale patterned band at the top of every page (motifs: flying birds,
+  feathers, leaves, flowers, dots, stars; `design.motifs` to choose), a raised white title tab with the puzzle
+  number, the theme icon in a white disc, a white grid card with a soft shadow, and the book mascot
+  (`design.mascot: bird`) perched on the grid. Inspired by bestselling puzzle books, in colour.
+- `framed`: page frame, flat coloured header band, word-list panel, leafy footer.
+Both: worked example on the how-to page. Grid letters must be 16 pt+ and fit their cells (check_book fails
+otherwise). Margins: inside 0.75 in, outside 0.6 in, top/bottom 0.5 in (KDP minimum 0.25 in).
+Set per book in `book.yaml` -> `design: {style, icon, badge, stars}`; per puzzle `icon:` / `difficulty:` in
+`content/puzzles.yaml`. Word-list columns are sized from measured text (tries 4, 3, then 2 columns; font shrinks to 14 pt minimum).
+Difficulty stars (`design.stars: auto`) only appear when puzzles have different difficulties.
 Icons: our own `bird`, `sprig`, or any Material Icons name (Apache 2.0). Never brand/mascot icons (see BANNED).
 Colour: `ink: standard_color` uses the `design.palette` colours (each puzzle page takes the next colour).
 Standard colour needs 72+ pages (check_book.py enforces it), so colour books have about 60+ puzzles and are

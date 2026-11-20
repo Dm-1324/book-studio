@@ -101,3 +101,89 @@ def draw_sprig(c, cx, y, width, grey=0.55):
     _leaf(c, cx + 4, y, 20, 20)
     c.circle(cx, y, 2.4, stroke=0, fill=1)
     c.restoreState()
+
+
+# ---------- small pattern motifs (for the "illustrated" page style) ----------
+
+def _flying_bird(c, x, y, s, angle=0):
+    c.saveState()
+    c.translate(x, y)
+    c.rotate(angle)
+    c.setLineWidth(max(s * 0.11, 0.8))
+    c.setLineCap(1)
+    p = c.beginPath()
+    p.moveTo(-s / 2, s * 0.12)
+    p.curveTo(-s * 0.32, s * 0.32, -s * 0.12, s * 0.25, 0, 0)
+    p.curveTo(s * 0.12, s * 0.25, s * 0.32, s * 0.32, s / 2, s * 0.12)
+    c.drawPath(p, stroke=1, fill=0)
+    c.restoreState()
+
+
+def _feather(c, x, y, s, angle=0):
+    c.saveState()
+    c.translate(x, y)
+    c.rotate(angle)
+    p = c.beginPath()
+    p.moveTo(0, -s / 2)
+    p.curveTo(s * 0.28, -s * 0.2, s * 0.24, s * 0.3, 0, s / 2)
+    p.curveTo(-s * 0.24, s * 0.3, -s * 0.28, -s * 0.2, 0, -s / 2)
+    p.close()
+    c.drawPath(p, stroke=0, fill=1)
+    c.setLineWidth(max(s * 0.05, 0.5))
+    c.setStrokeColorRGB(1, 1, 1)
+    c.line(0, -s * 0.62, 0, s * 0.42)
+    c.restoreState()
+
+
+def _flower(c, x, y, s, angle=0):
+    import math
+    for k in range(5):
+        a = math.radians(angle + k * 72)
+        c.circle(x + math.cos(a) * s * 0.26, y + math.sin(a) * s * 0.26, s * 0.2, stroke=0, fill=1)
+    c.saveState()
+    c.setFillColorRGB(1, 1, 1)
+    c.circle(x, y, s * 0.12, stroke=0, fill=1)
+    c.restoreState()
+
+
+def _star(c, x, y, s, angle=0):
+    import math
+    p = c.beginPath()
+    for k in range(10):
+        r = s / 2 if k % 2 == 0 else s / 4.6
+        a = math.radians(angle + 90 + k * 36)
+        (p.moveTo if k == 0 else p.lineTo)(x + r * math.cos(a), y + r * math.sin(a))
+    p.close()
+    c.drawPath(p, stroke=0, fill=1)
+
+
+def _dot(c, x, y, s, angle=0):
+    c.circle(x, y, s * 0.16, stroke=0, fill=1)
+
+
+def _leaf_motif(c, x, y, s, angle=0):
+    _leaf(c, x - s / 2, y, s, angle)
+
+
+MOTIFS = {"flying_bird": _flying_bird, "feather": _feather, "flower": _flower, "star": _star,
+          "dot": _dot, "leaf": _leaf_motif}
+
+
+def draw_pattern(c, x, y, w, h, rgb, motifs, seed, spacing=34, size=(9, 17)):
+    """Scatter small motifs on a jittered grid inside (x, y, w, h). Caller clips if needed."""
+    import random
+    rnd = random.Random(seed)
+    c.saveState()
+    c.setFillColorRGB(*rgb)
+    c.setStrokeColorRGB(*rgb)
+    row = 0
+    yy = y + spacing * 0.4
+    while yy < y + h + spacing:
+        xx = x + (spacing / 2 if row % 2 else 0) + rnd.uniform(-6, 6)
+        while xx < x + w + spacing:
+            name = rnd.choice(motifs)
+            MOTIFS[name](c, xx + rnd.uniform(-7, 7), yy + rnd.uniform(-6, 6), rnd.uniform(*size), rnd.uniform(-35, 35))
+            xx += spacing
+        yy += spacing * 0.8
+        row += 1
+    c.restoreState()

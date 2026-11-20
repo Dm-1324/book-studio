@@ -28,7 +28,7 @@ pdfmetrics.registerFont(TTFont("Body", str(FONTS / "AtkinsonHyperlegible-Regular
 pdfmetrics.registerFont(TTFont("BodyBold", str(FONTS / "AtkinsonHyperlegible-Bold.ttf")))
 pdfmetrics.registerFont(TTFont("Display", str(FONTS / "ArchivoBlack-Regular.ttf")))
 
-INSIDE, OUTSIDE, TOP, BOTTOM = 0.75 * inch, 0.6 * inch, 0.6 * inch, 0.6 * inch
+INSIDE, OUTSIDE, TOP, BOTTOM = 0.75 * inch, 0.6 * inch, 0.5 * inch, 0.5 * inch  # KDP minimum is 0.25 in
 INK, GREY = (0, 0, 0), (0.45, 0.45, 0.45)
 
 
@@ -51,7 +51,7 @@ class Book:
 
     @property
     def framed(self):
-        return (self.cfg.get("design") or {}).get("style", "framed") == "framed"
+        return (self.cfg.get("design") or {}).get("style", "framed") in ("framed", "illustrated")
 
     def next_page(self):
         if self.numbered and self.framed:
@@ -439,11 +439,12 @@ def generate(cfg, book_dir):
             if len(e["words"]) != cfg["words_per_puzzle"]:
                 raise SystemExit(f"puzzle {i} '{e['title']}' has {len(e['words'])} words, "
                                  f"expected {cfg['words_per_puzzle']}")
+            level = e.get("difficulty", cfg["difficulty"])
             try:
-                ws = make_wordsearch(e["words"], cfg["grid_size"], cfg["difficulty"], rng)
+                ws = make_wordsearch(e["words"], cfg["grid_size"], level, rng)
             except (ValueError, RuntimeError) as err:
                 raise SystemExit(f"puzzle {i} '{e['title']}': {err}")
-            out.append({"num": i, "title": e["title"], **ws})
+            out.append({"num": i, "title": e["title"], "difficulty": level, **ws})
     elif kind == "sudoku":
         for i in range(1, cfg["count"] + 1):
             out.append({"num": i, **make_sudoku(cfg["difficulty"], rng)})
@@ -468,6 +469,13 @@ def build(book_dir, dry_run=False):
 
     b = Book(dist / "interior.pdf", cfg)
     f = b.framed
+    # Difficulty stars only mean something when difficulty changes through the book
+    # (per-puzzle `difficulty:` in puzzles.yaml). design.stars: auto (default) | show | hide
+    levels = {"easy": 1, "medium": 2, "hard": 3}
+    mode = (cfg.get("design") or {}).get("stars", "auto")
+    varied = len({p.get("difficulty", cfg["difficulty"]) for p in puzzles}) > 1
+    if mode == "show" or (mode == "auto" and varied):
+        b.stars_for = {p["num"]: levels.get(p.get("difficulty", cfg["difficulty"]), 1) for p in puzzles}
     if kind_is_ws := cfg["puzzle_type"] == "wordsearch":
         # small worked example for the how-to page, from short words in puzzle 1
         short = sorted(puzzles[0]["words"], key=lambda w: len(w.replace(" ", "")))[:2]
@@ -520,6 +528,7 @@ def build(book_dir, dry_run=False):
         b.next_page()
     pages = b.page - 1
     b.save()
+    (dist / "layout.json").write_text(json.dumps(getattr(b, "layout_issues", []), indent=2), encoding="utf-8")
     info = {"pages": pages, "trim": cfg["trim"], "paper": cfg.get("paper", "white"),
             "puzzle_type": kind, "count": len(puzzles)}
     (dist / "build.json").write_text(json.dumps(info, indent=2), encoding="utf-8")

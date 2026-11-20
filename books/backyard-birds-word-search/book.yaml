@@ -42,7 +42,8 @@ back_blurb: |
 
   A gentle, thoughtful gift for birdwatchers, parents and grandparents.
 design:
-  style: framed
+  style: illustrated       # illustrated | framed | plain
+  mascot: bird              # little bird perched on every grid
   icon: bird
   palette: garden
   badge: "EXTRA LARGE PRINT  ·  EASY MODE"

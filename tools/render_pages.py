@@ -1,6 +1,7 @@
 """Render chosen pages of dist/interior.pdf (or the cover) to PNGs for visual checks.
 
 usage: python tools/render_pages.py books/<slug> 1,5,30        -> dist/preview/page-001.png ...
+       python tools/render_pages.py books/<slug> all            -> every page
        python tools/render_pages.py books/<slug> cover          -> dist/preview/cover.png
 """
 import sys
@@ -24,6 +25,8 @@ def render(book_dir, which, scale=1.4):
         return
     pdf = pdfium.PdfDocument(str(book_dir / "dist" / "interior.pdf"))
     pages = len(pdf)
+    if tokens == ["all"]:
+        tokens = [str(i) for i in range(1, pages + 1)]
     for token in tokens:
         n = pages if token == "last" else int(token)
         if not 1 <= n <= pages:

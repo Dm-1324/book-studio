@@ -6,7 +6,7 @@ Sample build (20 puzzles). The full book will have 100 puzzles; update counts be
 - **Book title:** Cricket Word Search for Adults
 - **Subtitle:** Large Print Puzzles on Shots, Fielding, Grounds and Match-Day Traditions
 - **Series:** Large Print Sports Word Search (volume 1)
-- **Author (pen name):** Brainy Bench Puzzles (placeholder until you choose)
+- **Author (pen name):** Brainy Bench Puzzles
 - **Description:**
 
 Settle in for a long innings with large-print word searches made for people who love the game.

@@ -41,6 +41,96 @@ def royalty(price, cost):
     return round(price * rate - cost, 2), rate
 
 
+UK_TO_US = {
+    "colour": "color", "colours": "colors", "coloured": "colored", "colourful": "colorful", "favourite": "favorite",
+    "honour": "honor", "grey": "gray", "centre": "center", "theatre": "theater", "behaviour": "behavior",
+    "neighbour": "neighbor", "organise": "organize", "realise": "realize", "travelling": "traveling",
+    "jewellery": "jewelry", "catalogue": "catalog", "programme": "program", "cosy": "cozy", "mould": "mold",
+    "moult": "molt", "plough": "plow", "harbour": "harbor", "flavour": "flavor", "metre": "meter",
+    "litre": "liter", "defence": "defense", "licence": "license", "armour": "armor", "labour": "labor",
+    "rumour": "rumor", "savour": "savor", "parlour": "parlor", "vapour": "vapor", "practise": "practice",
+}
+PLACEHOLDERS = ["placeholder", "lorem", "todo", "tbd", "xxx", "fixme", "<new-slug>"]
+
+
+def proofread(book_dir, cfg, info, puzzles, check):
+    """Automatic proofreading. Each problem found here once needed a human to spot it."""
+    import re
+    entries = []
+    pz = book_dir / "content" / "puzzles.yaml"
+    if pz.exists():
+        entries = yaml.safe_load(pz.read_text(encoding="utf-8")).get("puzzles", [])
+
+    # 1. layout report from the builder (text past a panel edge, titles that don't fit, word-list collisions)
+    lay = book_dir / "dist" / "layout.json"
+    issues = json.loads(lay.read_text(encoding="utf-8")) if lay.exists() else [{"msg": "layout.json missing"}]
+    check("Layout: no text overlaps or runs past its box", not issues,
+          "; ".join(f"p{i.get('page', '?')}: {i['msg']}" for i in issues[:5]))
+
+    # 2. the same word written two ways in different puzzles (GUINEAFOWL vs GUINEA FOWL)
+    forms = {}
+    for e in entries:
+        for w in e.get("words", []):
+            forms.setdefault(clean(w), set()).add(re.sub(r"\s+", " ", w.strip()).upper())
+    mixed = {k: sorted(v) for k, v in forms.items() if len(v) > 1}
+    check("Word lists: each word written the same way everywhere", not mixed,
+          "; ".join(" vs ".join(v) for v in list(mixed.values())[:5]))
+
+    # 3. odd characters / double spaces in words and titles
+    bad = [w for e in entries for w in e.get("words", []) if not re.fullmatch(r"[A-Za-z][A-Za-z' -]*[A-Za-z]", w)
+           or "  " in w]
+    bad += [e["title"] for e in entries if len(e.get("title", "")) > 28 or "  " in e.get("title", "")]
+    check("Word lists: clean words and titles (letters only, titles <= 28 chars)", not bad, ", ".join(bad[:8]))
+    titles = [e.get("title") for e in entries]
+    dup_titles = sorted({t for t in titles if titles.count(t) > 1})
+    check("Puzzle titles are all different", not dup_titles, ", ".join(dup_titles))
+
+    # 4. US or UK spelling, matching the main marketplace (amazon.com -> en-US)
+    locale = cfg.get("locale", "en-US")
+    if locale == "en-US":
+        texts = [cfg.get("title", ""), cfg.get("subtitle", ""), cfg.get("how_to_play", ""), cfg.get("back_page", ""),
+                 cfg.get("back_blurb", ""), (cfg.get("design") or {}).get("badge", "")]
+        for e in entries:
+            texts += [e.get("title", ""), e.get("fact", "")] + list(e.get("words", []))
+        listing = book_dir / "listing.md"
+        if listing.exists():
+            texts.append(listing.read_text(encoding="utf-8"))
+        found = sorted({m.lower() for t in texts for m in re.findall(r"[A-Za-z]+", t or "") if m.lower() in UK_TO_US})
+        check("Spelling: US English throughout (book is for Amazon.com)", not found,
+              ", ".join(f"{w} -> {UK_TO_US[w]}" for w in found))
+
+    # 5. leftovers: placeholder text anywhere a buyer could see it
+    blobs = {"book.yaml": (book_dir / "book.yaml").read_text(encoding="utf-8")}
+    for name in ("listing.md", "content/puzzles.yaml"):
+        f = book_dir / name
+        if f.exists():
+            blobs[name] = f.read_text(encoding="utf-8")
+    left = [f"{n}: '{w}'" for n, t in blobs.items() for w in PLACEHOLDERS
+            if re.search(rf"\b{re.escape(w)}\b", t, re.I) and not (n == "book.yaml" and w == "todo")]
+    check("No placeholder or TODO text left", not left, "; ".join(left[:5]))
+
+    # 6. listing matches the book
+    listing = book_dir / "listing.md"
+    if listing.exists():
+        lt = listing.read_text(encoding="utf-8")
+        counts = {int(x) for x in re.findall(r"\b(\d+)\s+(?:extra-large-print\s+|large-print\s+|full-color\s+)?"
+                                             r"(?:puzzles|word searches)\b", lt, re.I)}
+        check("Listing: puzzle count matches the book", counts <= {info["count"]},
+              f"listing says {sorted(counts)}, book has {info['count']}")
+        check("Listing: AI disclosure filled in", "AI-generated content" in lt and "Text:" in lt)
+        check("Listing: pen name matches book.yaml", cfg["author"] in lt)
+
+    # 7. "Did you know?" facts must be verified by the fact-checker agent (FACTS.md, with a source link)
+    facts = [e["fact"] for e in entries if e.get("fact")]
+    if facts:
+        fm = book_dir / "FACTS.md"
+        text = fm.read_text(encoding="utf-8") if fm.exists() else ""
+        rows = [ln for ln in text.splitlines() if ln.startswith("|")]
+        missing = [f for f in facts if not any(f in ln and "VERIFIED" in ln and "http" in ln for ln in rows)]
+        check(f"Facts: all {len(facts)} verified with a source (FACTS.md)", not missing,
+              (f"{len(missing)} not verified, e.g. '{missing[0]}'" if missing else ""))
+
+
 def run(book_dir):
     book_dir = Path(book_dir)
     cfg = yaml.safe_load((book_dir / "book.yaml").read_text(encoding="utf-8"))
@@ -110,6 +200,9 @@ def run(book_dir):
     price = float(cfg.get("price_usd", 9.99))
     earn, rate = royalty(price, cost)
     check("Royalty is positive", earn > 0, f"${price:.2f} x {int(rate * 100)}% - ${cost:.2f} print = ${earn:.2f} per copy")
+
+    # ---- proofreading: everything a human proofreader used to catch ----
+    proofread(book_dir, cfg, info, puzzles, check)
 
     failed = [x for x in results if x[0] == "FAIL"]
     lines = ["# QA", "", "## Automatic checks", "", "| Result | Check | Detail |", "|---|---|---|"]
