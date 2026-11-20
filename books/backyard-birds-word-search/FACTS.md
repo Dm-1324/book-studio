@@ -1,4 +1,4 @@
-# Fact check: Backyard Birds Word Search for Seniors  (2026-11-20)
+# Fact check: Wings & Words: 60 Backyard Bird Word Searches  (2026-11-20)
 
 **FACTS CHANGED: 27 of 60 facts were reworded in puzzles.yaml. The book MUST BE REBUILT (interior.pdf, answers, and anything that prints the facts) before upload.**
 

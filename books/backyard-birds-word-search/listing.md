@@ -24,7 +24,7 @@ Inside you'll find:
 
 A gentle, thoughtful gift for birdwatchers, parents and grandparents.
 
-- **Categories (pick 2, confirm in KDP's picker):** Games & Activities > Word Search; Nature > Birdwatching Guides
+- **Categories (pick 2, confirm in KDP's picker):** Humor & Entertainment > Puzzles & Games > Word Search; Humor & Entertainment > Puzzles & Games > Puzzles. (Avoid birdwatching guide categories: this is a puzzle book, not a field guide.)
 - **Keywords (7 boxes):** (the search phrases moved here from the old title)
   1. large print word search for seniors
   2. bird word search for adults

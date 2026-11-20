@@ -114,8 +114,9 @@ def pin_challenge(c, ctx, k):
     cfg, pal = ctx["cfg"], ctx["pal"]
     col = pal[(k + 2) % len(pal)]
     rnd = random.Random(f"pin-{k}")
-    p = ctx["puzzles"][rnd.randrange(len(ctx["puzzles"]))]
-    words = sorted(rnd.sample(p["words"], 5), key=len, reverse=True)
+    p = ctx["puzzles"][(k * 13 + 7) % len(ctx["puzzles"])]          # a different puzzle for each pin
+    fits = [w for w in p["words"] if len(w.replace(" ", "")) <= 10]   # the mini grid is 10 x 10
+    words = sorted(rnd.sample(fits, 5), key=len, reverse=True)
     ws = make_wordsearch(words, 10, cfg.get("difficulty", "easy"), rnd)  # a fresh mini puzzle, not a book answer
     _rgb(c, col)
     c.rect(0, 0, W, H, stroke=0, fill=1)
@@ -140,7 +141,7 @@ def pin_challenge(c, ctx, k):
     _text(c, f"{len(ctx['puzzles'])} more puzzles like this inside", "BodyBold", 34, W / 2,
           panel_top - panel_h - 60, W - 120, WHITE)
     _footer(c, cfg, tint(col, 1.0))
-    return {"kind": "challenge", "title": f"Can you find these 5 words? A {p['title'].lower()} word search"}
+    return {"kind": "challenge", "title": f"Can you find these 5 words? \"{p['title']}\" from {cfg['title']}"}
 
 
 def pin_fact(c, ctx, k):

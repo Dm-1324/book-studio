@@ -149,6 +149,15 @@ def proofread(book_dir, cfg, info, puzzles, check):
                      for w in e.get("words", []) if clean(w) in UK_ONLY_BIRDS})
         check("Vocabulary: no UK-only names outside region pages", not uk, ", ".join(uk[:10]))
 
+    # 4b. doubled words ("A a peaceful morning") in pin titles, the listing and puzzle titles
+    texts = [("listing", (book_dir / "listing.md").read_text(encoding="utf-8"))] if (book_dir / "listing.md").exists() else []
+    pj = book_dir / "dist" / "pins" / "pins.json"
+    if pj.exists():
+        texts += [("pin", p.get("title", "")) for p in json.loads(pj.read_text(encoding="utf-8"))]
+    texts += [("puzzle", e.get("title", "")) for e in entries]
+    dbl = [f"{k}: '{m.group(0)}'" for k, t in texts for m in re.finditer(r"\b(\w+)\s+\1\b", t, re.I)]
+    check("No doubled words in titles, pins or listing", not dbl, "; ".join(dbl[:5]))
+
     # 5. leftovers: placeholder text anywhere a buyer could see it
     blobs = {"book.yaml": (book_dir / "book.yaml").read_text(encoding="utf-8")}
     for name in ("listing.md", "content/puzzles.yaml"):

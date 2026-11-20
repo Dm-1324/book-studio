@@ -493,6 +493,9 @@ def bonus_page(b, url):
 MIN_LIST_PT = 14   # CLAUDE.md: words to find never below 14 pt
 
 
+FACT_PT = 14          # "Did you know?" text: large-print books never go below 14 pt
+
+
 def word_list_layout(words, size, avail_w):
     """Columns sized from the real text widths. Tries 3 columns, shrinking the font down to 14 pt,
     then 2 columns. Returns (cols, rows, size, column_lists, column_widths, gap)."""
@@ -529,8 +532,8 @@ def ws_panel(b, entry, words, iw):
         lay = (2, half, MIN_LIST_PT, [words[:half], words[half:]], [(iw - 36) / 2] * 2, 0)
     rows, size = lay[1], lay[2]
     fact = entry.get("fact")
-    fact_lines = balanced_lines(fact, "Body", 13.5, iw - 60) if fact else []
-    fact_h = (34 + 18 * len(fact_lines)) if fact else 0
+    fact_lines = balanced_lines(fact, "Body", FACT_PT, iw - 60) if fact else []
+    fact_h = (34 + 20 * len(fact_lines)) if fact else 0
     return lay, fact_lines, 38 + rows * size * 1.45 + fact_h
 
 
@@ -609,18 +612,18 @@ def wordsearch_page(b, num, entry, ws, draw_grid):
                 issue(b, "word-list", f"puzzle {num}: '{w}' runs past the panel edge")
         x += wcol + gap
     if fact:
-        fy = py + 14 + 18 * (len(fact_lines) - 1)
+        fy = py + 14 + 20 * (len(fact_lines) - 1)
         _rgb(c, tint(col, 0.5), fill=False)
         c.setLineWidth(0.6)
         c.line(ix + 18, fy + 40, ix + iw - 18, fy + 40)
         draw_icon(c, "lightbulb", ix + 14, fy + 16, 18, grey=None, rgb=col)
         _rgb(c, col)
-        c.setFont("BodyBold", 11.5)
+        c.setFont("BodyBold", 12.5)
         c.drawString(ix + 36, fy + 20, "DID YOU KNOW?")
         _rgb(c, NAVY)
-        c.setFont("Body", 13.5)
+        c.setFont("Body", FACT_PT)
         for k, ln in enumerate(fact_lines):
-            c.drawString(ix + 36, fy - k * 18, ln)
+            c.drawString(ix + 36, fy - k * 20, ln)
     b.next_page()
 
 

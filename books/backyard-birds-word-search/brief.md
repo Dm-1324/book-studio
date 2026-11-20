@@ -1,4 +1,4 @@
-# Brief: Backyard Birds Word Search for Seniors
+# Brief: Wings & Words: 60 Backyard Bird Word Searches
 
 - **Theme:** common backyard and garden birds, bird feeding, nests, birdsong, birdwatching kit.
 - **Reader:** seniors and older birdwatchers; gift buyers (children/grandchildren).
