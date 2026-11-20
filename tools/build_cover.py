@@ -80,7 +80,7 @@ def build(book_dir):
         c.drawImage(img, front_x + (box_w - dw) / 2, (box_h - dh) / 2, dw, dh)
         c.restoreState()
     else:
-        _placeholder_art(c, front_x, tw, th, style, book_dir)
+        _placeholder_art(c, front_x, tw, th, style, book_dir, cfg)
 
     # ---- front: badge, title, subtitle, author ----
     left = front_x + SAFE
@@ -162,7 +162,7 @@ def build(book_dir):
     print(f"wrote {out}  ({W / inch:.3f} x {H / inch:.3f} in, spine {spine / inch:.3f} in, {pages} pages)")
 
 
-def _placeholder_art(c, fx, tw, th, style, book_dir=None):
+def _placeholder_art(c, fx, tw, th, style, book_dir=None, cfg=None):
     """Theme-neutral art used until Fooocus art exists: a tilted card showing the book's
     first puzzle with three found words circled. Works for any word search book."""
     import math
@@ -179,12 +179,13 @@ def _placeholder_art(c, fx, tw, th, style, book_dir=None):
         allp = json.loads(pj.read_text(encoding="utf-8"))
         if allp and "grid" in allp[0]:
             n0 = len(allp[0]["grid"])
+            cfg = cfg or {}
             rnd = random.Random("cover")
             pool = sorted({w for p in allp for w in p["words"] if 5 <= len(w.replace(" ", "")) <= n0 - 2})
             for _ in range(20):
                 pick = rnd.sample(pool, min(6, len(pool)))
                 try:
-                    ws = make_wordsearch(pick, n0, "medium", rnd)
+                    ws = make_wordsearch(pick, n0, cfg.get("difficulty", "medium"), rnd)  # match the book's promise
                     grid, places = ws["grid"], list(ws["placements"].values())
                     break
                 except (ValueError, RuntimeError):

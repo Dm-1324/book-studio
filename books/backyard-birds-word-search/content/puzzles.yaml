@@ -262,8 +262,8 @@ puzzles:
   - Goldeneye
   - Bufflehead
   - Wood duck
-  - Mandarin
-  - Pochard
+  - Canvasback
+  - Redhead
   fact: A male duck is called a drake, and a female is called a hen.
   icon: waves
 - title: Herons and Waders
@@ -530,7 +530,7 @@ puzzles:
   - Compost
   - Pond
   - Perch
-  - Bird table
+  - Seed tray
   fact: A birdbath gives birds fresh water, which they especially need in winter.
   icon: yard
 - title: Parts of a Bird
