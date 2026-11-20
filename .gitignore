@@ -4,3 +4,4 @@ __pycache__/
 config.local.json
 logs/
 research/pins-posted.json
+upload/
