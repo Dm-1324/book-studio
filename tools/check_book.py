@@ -49,6 +49,15 @@ UK_TO_US = {
     "moult": "molt", "plough": "plow", "harbour": "harbor", "flavour": "flavor", "metre": "meter",
     "litre": "liter", "defence": "defense", "licence": "license", "armour": "armor", "labour": "labor",
     "rumour": "rumor", "savour": "savor", "parlour": "parlor", "vapour": "vapor", "practise": "practice",
+    "ochre": "ocher", "sombre": "somber", "manoeuvre": "maneuver", "aluminium": "aluminum",
+}
+# Birds a US buyer won't know: only allowed on pages marked `region:` (e.g. a "Birds of Europe" page)
+UK_ONLY_BIRDS = {
+    "BLUETIT", "GREATTIT", "COALTIT", "DUNNOCK", "BLACKCAP", "LINNET", "CHAFFINCH", "GREENFINCH", "HAWFINCH",
+    "YELLOWHAMMER", "REEDBUNTING", "BRAMBLING", "FIELDFARE", "REDWING", "SISKIN", "HOUSEMARTIN", "SANDMARTIN",
+    "TAWNYOWL", "LITTLEOWL", "TREECREEPER", "PARTRIDGE", "PIPIT", "MOORHEN", "HOBBY", "REDSHANK", "SKYLARK",
+    "SONGTHRUSH", "MISTLETHRUSH", "WOODPIGEON", "COLLAREDDOVE", "TURTLEDOVE", "JACKDAW", "ROOK", "CHOUGH",
+    "GOLDCREST", "FIRECREST", "NIGHTINGALE", "WHITETHROAT", "STONECHAT", "WHEATEAR", "WAGTAIL", "ROBINREDBREAST",
 }
 PLACEHOLDERS = ["placeholder", "lorem", "todo", "tbd", "xxx", "fixme", "<new-slug>"]
 
@@ -85,6 +94,44 @@ def proofread(book_dir, cfg, info, puzzles, check):
     dup_titles = sorted({t for t in titles if titles.count(t) > 1})
     check("Puzzle titles are all different", not dup_titles, ", ".join(dup_titles))
 
+    # 3b. near-duplicate puzzles and over-used words (a buyer notices repeats)
+    sets = [(i + 1, {clean(w) for w in e.get("words", [])}) for i, e in enumerate(entries)]
+    pairs = [f"{a}&{b} ({len(sa & sb)})" for k, (a, sa) in enumerate(sets) for b, sb in sets[k + 1:]
+             if len(sa & sb) >= 5]
+    check("Puzzles are distinct (no two share 5+ words)", not pairs, ", ".join(pairs[:8]))
+    use = {}
+    for n, st in sets:
+        for w in st:
+            use.setdefault(w, []).append(n)
+    over = [f"{w} x{len(v)}" for w, v in sorted(use.items()) if len(v) > 3]
+    check("No word used in more than 3 puzzles", not over, ", ".join(over[:10]))
+
+    # 3c. repeated "Did you know?" facts: two facts sharing 2+ topic words (e.g. "dawn" + "chorus",
+    #     "ostrich" + "largest") say the same thing twice
+    generic = set("a an the and or of to in on at for from with by is are was be it its their they them this that "
+                  "as can many some most often more than into out up so very which who when while bird birds other "
+                  "any kind use uses used per hour hours miles mile fly flies flying live living one two year years "
+                  "called help helps keep keeps make makes about over".split())
+    def topic(t):
+        return {re.sub(r"(es|s)$", "", w) for w in re.findall(r"[a-z]+", t.lower()) if w not in generic and len(w) > 2}
+    fl = [(i + 1, e["fact"]) for i, e in enumerate(entries) if e.get("fact")]
+    dupes = [f"{a}&{b2} ({'/'.join(sorted(topic(fa) & topic(fb)))})" for k, (a, fa) in enumerate(fl)
+             for b2, fb in fl[k + 1:] if len(topic(fa) & topic(fb)) >= 2]
+    check("Facts: no fact repeats another (book-checker decides)", not dupes, ", ".join(dupes[:8]), warn=True)
+
+    # 3d. one grid size on every puzzle page (layout drift looks careless in a large-print book)
+    cells = info.get("grid_cells", [])
+    check("Same grid size on every puzzle page", len(cells) <= 1, f"sizes {cells}")
+
+    # 3e. cover tagline must not repeat the subtitle
+    cy = book_dir / "assets" / "cover.yaml"
+    if cy.exists():
+        feats = (yaml.safe_load(cy.read_text(encoding="utf-8")) or {}).get("features", "") or ""
+        sub = cfg.get("subtitle", "").lower()
+        phrases = [p.strip().lower() for p in re.split(r"[\u00b7|,]", feats) if p.strip()]
+        rep = [p for p in phrases if len(p.split()) >= 2 and p in sub]
+        check("Cover: tagline doesn't repeat the subtitle", not rep, ", ".join(rep))
+
     # 4. US or UK spelling, matching the main marketplace (amazon.com -> en-US)
     locale = cfg.get("locale", "en-US")
     if locale == "en-US":
@@ -98,6 +145,9 @@ def proofread(book_dir, cfg, info, puzzles, check):
         found = sorted({m.lower() for t in texts for m in re.findall(r"[A-Za-z]+", t or "") if m.lower() in UK_TO_US})
         check("Spelling: US English throughout (book is for Amazon.com)", not found,
               ", ".join(f"{w} -> {UK_TO_US[w]}" for w in found))
+        uk = sorted({f"{clean(w)} (p{i + 1})" for i, e in enumerate(entries) if not e.get("region")
+                     for w in e.get("words", []) if clean(w) in UK_ONLY_BIRDS})
+        check("Vocabulary: no UK-only names outside region pages", not uk, ", ".join(uk[:10]))
 
     # 5. leftovers: placeholder text anywhere a buyer could see it
     blobs = {"book.yaml": (book_dir / "book.yaml").read_text(encoding="utf-8")}
@@ -138,8 +188,8 @@ def run(book_dir):
     puzzles = json.loads((book_dir / "dist" / "puzzles.json").read_text(encoding="utf-8"))
     results = []
 
-    def check(name, ok, detail=""):
-        results.append(("PASS" if ok else "FAIL", name, detail))
+    def check(name, ok, detail="", warn=False):
+        results.append(("PASS" if ok else ("WARN" if warn else "FAIL"), name, detail))
 
     # interior
     r = PdfReader(str(book_dir / "dist" / "interior.pdf"))

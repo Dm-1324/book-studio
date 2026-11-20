@@ -1,3 +1,13 @@
+**Status (2026-11-20): all fixes below applied by Claude; check_book.py 23/23 PASS (+1 WARN reviewed).
+Waiting for a fresh book-checker run before READY.**
+
+- UK-only birds replaced with US birds (puzzles 1, 2, 3, 4, 5, 17, 18, 24, 25, 42, 51, 52, 53, 56, 57); how-to now says BLUE JAY.
+- Overlaps reworked: 12 (seabirds only), 33 (night, no owls), 51 (rivers), 24 (no snow-page birds); overused words cut.
+- Repeated facts replaced: 26 (robin eggs), 44 (dust baths), 47 (Christmas Bird Count), 60 (mourning dove), new 53 (bobwhite); sources in FACTS.md.
+- OCHER, rainforest icon (eco), night icon (bedtime), one grid size on every page, certificate title on its own line,
+  cover tagline "60 PUZZLES - ANSWERS INCLUDED".
+- New automatic checks added for every item, so these can't come back.
+
 # REJECTED: Backyard Birds Word Search for Seniors
 
 Layout, answers, tracker, series cards, certificate and cover pass visual review. Fix the content below, rebuild, re-run check_book.py and book-checker.

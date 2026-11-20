@@ -498,6 +498,8 @@ def build(book_dir, dry_run=False):
     if kind == "wordsearch":
         entries = {e["title"]: e for e in yaml.safe_load(
             (book_dir / "content" / "puzzles.yaml").read_text(encoding="utf-8"))["puzzles"]}
+        if f:
+            design.plan_wordsearch_pages(b, [({**entries.get(p["title"], {}), **p}, p) for p in puzzles])
         for p in puzzles:
             if f:
                 design.wordsearch_page(b, p["num"], {**entries.get(p["title"], {}), **p}, p, draw_wordsearch_grid)
@@ -530,7 +532,8 @@ def build(book_dir, dry_run=False):
     b.save()
     (dist / "layout.json").write_text(json.dumps(getattr(b, "layout_issues", []), indent=2), encoding="utf-8")
     info = {"pages": pages, "trim": cfg["trim"], "paper": cfg.get("paper", "white"),
-            "puzzle_type": kind, "count": len(puzzles)}
+            "puzzle_type": kind, "count": len(puzzles),
+            "grid_cells": sorted(set(getattr(b, "grid_cells", [])))}
     (dist / "build.json").write_text(json.dumps(info, indent=2), encoding="utf-8")
     print(f"wrote {dist / 'interior.pdf'} ({pages} pages)")
 

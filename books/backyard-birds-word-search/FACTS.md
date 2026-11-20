@@ -63,7 +63,7 @@ Other factual text: book.yaml `how_to_play` / `back_blurb` and listing.md make n
 | 23 | Bar-headed geese fly over the Himalayas when they migrate. | VERIFIED | https://www.audubon.org/news/how-bar-headed-geese-fly-over-himalayas |
 | 24 | In winter, many birds fluff up their feathers to trap warm air. | VERIFIED | https://www.audubon.org/magazine/how-do-birds-cope-cold-winter-weather |
 | 25 | In spring, many songbirds sing to attract a mate and defend a territory. | VERIFIED | https://www.nationalgeographic.com/animals/article/birds-dawn-chorus |
-| 26 | Ostriches lay the largest eggs of any living bird. | VERIFIED | https://animals.sandiegozoo.org/animals/ostrich |
+| 26 | American robin eggs are the pale blue known as "robin's-egg blue." | VERIFIED | https://audubon.org/field-guide/bird/american-robin |
 | 27 | A baby swan is called a cygnet. | VERIFIED | https://www.wwt.org.uk/about-us/news/newest-arrivals-at-the-nursery |
 | 28 | A group of crows is called a murder. | VERIFIED | https://www.audubon.org/news/what-do-you-call-group-birds |
 | 29 | Some birds swallow small stones or grit to help grind their food. | VERIFIED | https://animals.sandiegozoo.org/animals/ostrich https://www.audubon.org/field-guide/bird/mourning-dove |
@@ -81,20 +81,31 @@ Other factual text: book.yaml `how_to_play` / `back_blurb` and listing.md make n
 | 41 | The ostrich is the largest and heaviest living bird. | VERIFIED | https://nationalzoo.si.edu/animals/ostrich |
 | 42 | The bee hummingbird of Cuba is the smallest bird in the world. | VERIFIED | https://www.nationalgeographic.com/magazine/article/hummingbird-secrets-speed-worlds-smallest-bird |
 | 43 | Some swiftlets build their nests from their own saliva. | VERIFIED | https://pmc.ncbi.nlm.nih.gov/articles/PMC8517086/ |
-| 44 | Birds preen to keep their feathers clean, tidy and waterproof. | VERIFIED | https://www.audubon.org/magazine/read-excerpt-david-sibleys-new-book-what-its-be-bird |
+| 44 | Dust baths help birds remove extra oil and dirt from their feathers. | VERIFIED | https://www.audubon.org/magazine/ask-kenn-how-do-birds-keep-themselves-clean |
 | 45 | Geese fly in a V shape, which helps them save energy. | VERIFIED | https://www.audubon.org/magazine/why-birds-fly-v-formation-migration-science |
 | 46 | Some birds use the stars to find their way when they migrate at night. | VERIFIED | https://www.nationalgeographic.com/animals/article/bird-migration-one-of-natures-wonders-heres-how-they-do-it |
-| 47 | Many birds sing more at dawn and dusk, so those are great times to listen. | VERIFIED | https://www.nps.gov/articles/birding-for-beginners.htm |
+| 47 | The Christmas Bird Count began on Christmas Day in 1900. | VERIFIED | https://www.audubon.org/programs/christmas-bird-count |
 | 48 | A life list is a birder's record of every species they have seen. | VERIFIED | https://www.nps.gov/articles/birding-for-beginners.htm |
 | 49 | Bird photographers use long lenses to keep a respectful distance. | VERIFIED | https://www.audubon.org/photography/awards/audubons-guide-ethical-bird-photography-and-videography |
 | 50 | Golden eagles can spot a rabbit from over a mile away. | VERIFIED | https://www.audubon.org/news/how-golden-eagles-spot-prey-incredible-distances |
 | 51 | Dippers can walk underwater along stream beds to find food. | VERIFIED | https://www.audubon.org/field-guide/bird/american-dipper |
 | 52 | Nuthatches can climb headfirst down tree trunks. | VERIFIED | https://www.rspb.org.uk/birds-and-wildlife/nuthatch |
-| 53 | Skylarks sing while hovering high in the air. | VERIFIED | https://www.audubon.org/field-guide/bird/eurasian-skylark |
+| 53 | The northern bobwhite is named after its whistled "bob-white" call. | VERIFIED | https://www.allaboutbirds.org/guide/norbob |
 | 54 | Peregrine falcons nest on tall city buildings in many places. | VERIFIED | https://www.fws.gov/story/2006-10/worlds-fastest-bird-continues-rebound |
 | 55 | Ptarmigans turn white in winter to blend in with the snow. | VERIFIED | https://www.audubon.org/field-guide/bird/willow-ptarmigan |
 | 56 | Crossbills use their crossed beaks to pry seeds out of pine cones. | VERIFIED | https://www.nps.gov/romo/learn/nature/red_crossbill.htm |
 | 57 | Swifts can stay in the air for months without landing. | VERIFIED | https://www.nationalgeographic.com/animals/article/swift-bird-10-month-migration |
 | 58 | The kiwi lays an egg that is very large for the size of its body. | VERIFIED | https://www.audubon.org/news/why-kiwis-egg-so-big |
 | 59 | In legend, the phoenix rises again from its own ashes. | VERIFIED | https://asia-archive.si.edu/podcast/chinese-music-for-the-phoenix-washington-guzheng-society/ |
-| 60 | The dawn chorus is at its loudest in spring. | VERIFIED | https://www.rspb.org.uk/whats-happening/news/the-dawn-chorus-all-you-need-to-know-about-natures-big-show |
+| 60 | Mourning doves make a sharp whistling sound when they take flight. | VERIFIED | https://www.audubon.org/magazine/10-fun-facts-about-mourning-dove |
+
+## Replaced facts (2026-11-20, after book-checker rejection)
+
+These facts replaced repeats (dawn chorus, waterproofing, ostrich) and a page rework. Each was checked
+against the page listed, by Claude via web search:
+
+- 26: "American robin eggs are the pale blue known as "robin's-egg blue."" (Audubon field guide: eggs "pale blue or robin's-egg blue")
+- 44: "Dust baths help birds remove extra oil and dirt from their feathers." (Audubon (Kenn Kaufman): dust bathing removes grease and debris)
+- 47: "The Christmas Bird Count began on Christmas Day in 1900." (Audubon: began on Christmas Day in 1900)
+- 53: "The northern bobwhite is named after its whistled "bob-white" call." (Cornell Lab: the call sounds like "bob-white"; also outdooralabama.com: name derives from the call)
+- 60: "Mourning doves make a sharp whistling sound when they take flight." (Audubon: sharp whistling sound when they take flight)

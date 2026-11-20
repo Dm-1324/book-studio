@@ -59,7 +59,9 @@ Besides KDP specs and puzzle correctness, check_book FAILs on: any layout issue 
 dist/layout.json (text past a panel edge, word-list column collisions, header titles that don't fit next to
 the stars/icon), a word written two ways in different puzzles, UK spelling in an en-US book, unclean or
 duplicate titles, placeholder/TODO text, a listing whose puzzle count/pen name/AI disclosure don't match,
-and any fact not marked VERIFIED with a source link in FACTS.md. When the book-checker finds a problem these
+any fact not marked VERIFIED with a source link in FACTS.md, UK-only names outside `region:` pages,
+two puzzles sharing 5+ words, a word in more than 3 puzzles, grid sizes that differ between pages, and a
+cover tagline that repeats the subtitle. It WARNs (book-checker decides) on facts that may repeat an idea. When the book-checker finds a problem these
 checks missed, add a check for it here so it can never come back.
 
 ## Interior design

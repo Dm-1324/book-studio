@@ -4,14 +4,14 @@ puzzles:
   - Robin
   - Sparrow
   - Finch
-  - Blue tit
+  - Titmouse
   - Chickadee
   - Cardinal
   - Nuthatch
   - Starling
   - Wren
   - Junco
-  - Siskin
+  - Pine siskin
   - Seeds
   - Suet
   - Peanuts
@@ -19,19 +19,19 @@ puzzles:
 - title: Garden Songbirds
   words:
   - Blackbird
-  - Thrush
+  - Wood thrush
   - Warbler
-  - Blackcap
-  - Dunnock
-  - Chaffinch
-  - Greenfinch
-  - Linnet
+  - House finch
+  - Song sparrow
+  - Vireo
+  - Goldfinch
   - Bunting
   - Oriole
   - Mockingbird
   - Bluebird
   - Catbird
   - Tanager
+  - Grosbeak
   fact: Mockingbirds often imitate the songs of other birds.
 - title: Birds of Prey
   words:
@@ -48,20 +48,21 @@ puzzles:
   - Condor
   - Talons
   - Merlin
-  - Hobby
-  fact: The peregrine falcon is the world's fastest bird, diving at over 100 miles per hour.
+  - Caracara
+  fact: The peregrine falcon is the world's fastest bird, diving at over 100 miles
+    per hour.
 - title: Owls at Night
   words:
   - Barn owl
-  - Tawny owl
+  - Great gray owl
   - Snowy owl
-  - Little owl
-  - Eagle owl
+  - Burrowing owl
+  - Barred owl
   - Screech owl
   - Hoot
   - Moonlight
   - Silent
-  - Feathers
+  - Whoo
   - Pellet
   - Dusk
   - Midnight
@@ -75,7 +76,7 @@ puzzles:
   - Goose
   - Heron
   - Mallard
-  - Moorhen
+  - Gallinule
   - Coot
   - Grebe
   - Kingfisher
@@ -189,8 +190,8 @@ puzzles:
   - South
   - Journey
   - Frost
-  - Berries
-  - Feeder
+  - Snowmelt
+  - Equinox
   icon: park
   fact: Arctic terns migrate from the Arctic to the Antarctic every year.
 - title: Birds by the Sea
@@ -202,13 +203,13 @@ puzzles:
   - Cormorant
   - Albatross
   - Petrel
-  - Plover
-  - Sandpiper
-  - Oystercatcher
-  - Curlew
   - Skua
-  - Dunlin
-  - Waves
+  - Murre
+  - Razorbill
+  - Kittiwake
+  - Skimmer
+  - Ocean
+  - Sea spray
   icon: waves
   fact: A puffin may carry a dozen small fish in its bill at once.
 - title: Woodpeckers and Friends
@@ -287,34 +288,34 @@ puzzles:
   words:
   - Crow
   - Raven
-  - Rook
-  - Jackdaw
   - Magpie
   - Jay
-  - Chough
   - Nutcracker
+  - Corvid
   - Clever
   - Caw
   - Black
   - Glossy
   - Treetop
   - Roost
+  - Shiny
+  - Tools
   fact: Crows can recognize individual people.
 - title: Pigeons and Doves
   words:
   - Squab
   - Collared
   - Coo
-  - Turtle dove
-  - Wood pigeon
+  - Mourning dove
+  - Inca dove
+  - Ground dove
   - Rock dove
   - Homing
-  - Mourning
+  - Pigeon
   - Peace
   - Olive branch
   - Loft
   - Racing
-  - Feathers
   - Gentle
   fact: Homing pigeons can find their way home from hundreds of miles away.
 - title: Parrots of the World
@@ -370,7 +371,7 @@ puzzles:
   - Jungle
   - Cock of the rock
   fact: Toucans use their big, light bills to reach fruit on thin branches.
-  icon: forest
+  icon: eco
 - title: Desert Birds
   words:
   - Roadrunner
@@ -409,37 +410,37 @@ puzzles:
   icon: landscape
 - title: Winter Visitors
   words:
-  - Waxwing
-  - Redwing
-  - Fieldfare
-  - Brambling
-  - Snow bunting
-  - Junco
-  - Siskin
-  - Redpoll
-  - Frost
+  - Cedar waxwing
+  - Tree sparrow
+  - Purple finch
+  - Kinglet
+  - Snow goose
+  - Horned lark
+  - Feeder
   - Berries
   - Holly
-  - Feeder
   - Snowfall
   - Cozy
+  - Suet cake
+  - Scarf
+  - Mittens
   fact: In winter, many birds fluff up their feathers to trap warm air.
   icon: ac_unit
 - title: Spring Arrivals
   words:
-  - Swallow
-  - Cuckoo
   - Warbler
   - Oriole
   - Tanager
-  - Swift
-  - Martin
+  - Cuckoo
+  - Kingbird
+  - Flycatcher
   - Blossom
   - Nesting
   - Courtship
   - Return
   - Songs
   - Buds
+  - Tulips
   - Rain
   fact: In spring, many songbirds sing to attract a mate and defend a territory.
   icon: local_florist
@@ -459,7 +460,7 @@ puzzles:
   - Cream
   - Ostrich
   - Brood
-  fact: Ostriches lay the largest eggs of any living bird.
+  fact: American robin eggs are the pale blue known as "robin's-egg blue."
   icon: egg
 - title: Baby Birds
   words:
@@ -557,7 +558,7 @@ puzzles:
   - Azure
   - Emerald
   - Russet
-  - Ochre
+  - Ocher
   - Ivory
   - Slate
   - Copper
@@ -572,19 +573,19 @@ puzzles:
   - Nightjar
   - Nighthawk
   - Whippoorwill
-  - Barn owl
   - Kiwi
   - Night heron
   - Potoo
   - Frogmouth
-  - Moon
   - Stars
   - Darkness
-  - Silent
   - Moths
-  - Dusk
+  - Fireflies
+  - Crickets
+  - Lantern
+  - Bedtime
   fact: Nightjars hunt moths and other insects at night.
-  icon: nights_stay
+  icon: bedtime
 - title: Shorebirds
   words:
   - Sandpiper
@@ -594,7 +595,7 @@ puzzles:
   - Sanderling
   - Dunlin
   - Oystercatcher
-  - Redshank
+  - Willet
   - Godwit
   - Curlew
   - Tideline
@@ -711,6 +712,7 @@ puzzles:
   - Bee eater
   fact: European robins sometimes sing at night near bright streetlights.
   icon: public
+  region: europe
 - title: Giants of the Bird World
   words:
   - Ostrich
@@ -732,8 +734,8 @@ puzzles:
   words:
   - Hummingbird
   - Kinglet
-  - Goldcrest
-  - Firecrest
+  - Verdin
+  - Pygmy nuthatch
   - Wren
   - Bushtit
   - Sunbird
@@ -779,7 +781,7 @@ puzzles:
   - Sing
   - Nest
   - Defend
-  fact: Birds preen to keep their feathers clean, tidy and waterproof.
+  fact: Dust baths help birds remove extra oil and dirt from their feathers.
 - title: Up in the Sky
   words:
   - Clouds
@@ -832,7 +834,7 @@ puzzles:
   - Checklist
   - Picnic
   - Sunset
-  fact: Many birds sing more at dawn and dusk, so those are great times to listen.
+  fact: The Christmas Bird Count began on Christmas Day in 1900.
   icon: visibility
 - title: My Bird Journal
   words:
@@ -891,29 +893,29 @@ puzzles:
 - title: Lakes and Rivers
   words:
   - Dipper
-  - Kingfisher
   - Osprey
-  - Grebe
-  - Coot
-  - Moorhen
-  - Loon
+  - Merganser
   - Cormorant
-  - Heron
-  - Sand martin
+  - Wood duck
+  - Swallow
   - Reeds
   - Ripple
   - Current
   - Riverbank
+  - Canoe
+  - Dragonfly
+  - Lily pad
+  - Waterfall
   fact: Dippers can walk underwater along stream beds to find food.
   icon: waves
 - title: A Woodland Walk
   words:
   - Woodpecker
   - Jay
-  - Treecreeper
+  - Brown creeper
   - Nuthatch
-  - Tawny owl
-  - Woodcock
+  - Barred owl
+  - Ruffed grouse
   - Thrush
   - Oak
   - Ferns
@@ -926,21 +928,21 @@ puzzles:
   icon: forest
 - title: Meadow and Field
   words:
-  - Skylark
   - Meadowlark
-  - Pipit
+  - Bobwhite
   - Quail
   - Pheasant
-  - Partridge
   - Kestrel
   - Barn owl
   - Bobolink
+  - Dickcissel
+  - Field sparrow
   - Grass
   - Wildflowers
   - Hay
-  - Hedgerow
-  - Poppies
-  fact: Skylarks sing while hovering high in the air.
+  - Fence post
+  - Clover
+  fact: The northern bobwhite is named after its whistled "bob-white" call.
   icon: grass
 - title: City Birds
   words:
@@ -980,36 +982,36 @@ puzzles:
 - title: Finches and Buntings
   words:
   - Goldfinch
-  - Greenfinch
-  - Chaffinch
-  - Bullfinch
-  - Hawfinch
-  - Linnet
-  - Siskin
+  - House finch
+  - Purple finch
+  - Pine siskin
   - Redpoll
   - Crossbill
-  - Yellowhammer
-  - Reed bunting
   - Indigo bunting
+  - Rosy finch
+  - Lark bunting
+  - Grosbeak
   - Seeds
   - Thistle
+  - Nyjer
+  - Sunflower
   fact: Crossbills use their crossed beaks to pry seeds out of pine cones.
 - title: Swallows and Swifts
   words:
-  - Swallow
-  - Swift
-  - House martin
-  - Sand martin
+  - Barn swallow
+  - Tree swallow
+  - Bank swallow
+  - Cliff swallow
+  - Chimney swift
+  - Purple martin
   - Mud nest
   - Insects
   - Eaves
-  - Barn
-  - Forked tail
   - Aerial
   - Summer
   - Swoop
   - Chatter
-  - Screaming
+  - Birdhouse
   fact: Swifts can stay in the air for months without landing.
   icon: flight
 - title: Island Birds
@@ -1064,5 +1066,5 @@ puzzles:
   - Breeze
   - Gentle
   - Smile
-  fact: The dawn chorus is at its loudest in spring.
+  fact: Mourning doves make a sharp whistling sound when they take flight.
   icon: wb_sunny

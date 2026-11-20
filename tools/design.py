@@ -452,9 +452,13 @@ def certificate_page(b):
     _rgb(c, SOFT)
     from build_book import balanced_lines
     y = top - 390
-    for ln in balanced_lines(f"solved every puzzle in {b.cfg['title']}", "Body", 16, iw - 100):
+    c.drawCentredString(mid, y, "solved every puzzle in")
+    y -= 30
+    _rgb(c, NAVY)
+    c.setFont("BodyBold", 18)
+    for ln in balanced_lines(b.cfg["title"], "BodyBold", 18, iw - 100):   # the title never splits mid-line
         c.drawCentredString(mid, y, ln)
-        y -= 22
+        y -= 24
     c.line(ix + 70, iy + 70, ix + iw / 2 - 20, iy + 70)
     c.line(ix + iw / 2 + 20, iy + 70, ix + iw - 70, iy + 70)
     c.setFont("BodyBold", 11)
@@ -511,6 +515,32 @@ def word_list_layout(words, size, avail_w):
     return None
 
 
+def inner_width(b):
+    x, y, cw, ch = b.box
+    return cw - (8 if illustrated(b) else 2 * PAD)
+
+
+def ws_panel(b, entry, words, iw):
+    """Word-list panel layout for one puzzle: (layout, fact_lines, panel height)."""
+    from build_book import balanced_lines
+    lay = word_list_layout(words, b.cfg["list_font_size"], iw - 36)
+    if lay is None:
+        half = (len(words) + 1) // 2
+        lay = (2, half, MIN_LIST_PT, [words[:half], words[half:]], [(iw - 36) / 2] * 2, 0)
+    rows, size = lay[1], lay[2]
+    fact = entry.get("fact")
+    fact_lines = balanced_lines(fact, "Body", 13.5, iw - 60) if fact else []
+    fact_h = (34 + 18 * len(fact_lines)) if fact else 0
+    return lay, fact_lines, 38 + rows * size * 1.45 + fact_h
+
+
+def plan_wordsearch_pages(b, entries_and_ws):
+    """Run before drawing: the tallest word panel in the book sets one panel height for every page,
+    so every grid in the book is drawn at exactly the same size."""
+    iw = inner_width(b)
+    b.ws_panel_h = max(ws_panel(b, e, sorted(ws["words"], key=str.upper), iw)[2] for e, ws in entries_and_ws)
+
+
 def wordsearch_page(b, num, entry, ws, draw_grid):
     cfg = b.cfg
     col = accent(b, num - 1)
@@ -519,22 +549,20 @@ def wordsearch_page(b, num, entry, ws, draw_grid):
     stars = getattr(b, "stars_for", {}).get(num)
     y = header(b, ix, iy + ih, iw, entry["title"], label=num, icon=icon_of(b, entry), col=col, stars=stars)
     words = sorted(ws["words"], key=str.upper)
-    lay = word_list_layout(words, cfg["list_font_size"], iw - 36)
-    if lay is None:
+    lay, fact_lines, panel_h = ws_panel(b, entry, words, iw)
+    if word_list_layout(words, cfg["list_font_size"], iw - 36) is None:
         issue(b, "word-list", f"puzzle {num}: words do not fit even in 2 columns at {MIN_LIST_PT} pt")
-        lay = (2, (len(words) + 1) // 2, MIN_LIST_PT, [words[:(len(words) + 1) // 2], words[(len(words) + 1) // 2:]],
-               [(iw - 36) / 2] * 2, 0)
+    panel_h = max(panel_h, getattr(b, "ws_panel_h", 0))      # same panel height -> same grid size everywhere
     cols, rows, size, groups, widths, gap = lay
     lh = size * 1.45
     fact = entry.get("fact")
-    from build_book import balanced_lines
-    fact_lines = balanced_lines(fact, "Body", 13.5, iw - 60) if fact else []
-    fact_h = (34 + 18 * len(fact_lines)) if fact else 0
-    panel_h = 38 + rows * lh + fact_h
     n = len(ws["grid"])
     avail = y - 16 - (iy + panel_h + 14)
     cell = min(iw / (n + 0.7), avail / (n + 0.7))
     grid_w = n * cell
+    if not hasattr(b, "grid_cells"):
+        b.grid_cells = []
+    b.grid_cells.append(round(cell, 2))
     gx = ix + (iw - grid_w) / 2
     gtop = y - 16 - cell * 0.35
     font = min(cell * 0.6, 30)                       # letters must sit inside their cells

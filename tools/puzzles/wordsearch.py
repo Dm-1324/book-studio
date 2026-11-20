@@ -91,8 +91,9 @@ def make_wordsearch(words, size, difficulty, rng, attempts=200):
         raise ValueError("duplicate words in puzzle")
     for cw_a in [c for _, c in cleaned]:
         for cw_b in [c for _, c in cleaned]:
-            if cw_a != cw_b and cw_a in cw_b:
-                raise ValueError(f"'{cw_a}' is inside '{cw_b}', it would be found twice")
+            if cw_a != cw_b and (cw_a in cw_b or cw_a in cw_b[::-1]):
+                how = "inside" if cw_a in cw_b else "backwards inside"
+                raise ValueError(f"'{cw_a}' is {how} '{cw_b}', it would be found twice")
     order = sorted(cleaned, key=lambda x: -len(x[1]))
     for _ in range(attempts):
         grid = [[None] * size for _ in range(size)]
