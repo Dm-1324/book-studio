@@ -15,7 +15,7 @@ puzzles:
   - Seeds
   - Suet
   - Peanuts
-  fact: Chickadees hide seeds and remember where they put them.
+  fact: Chickadees store seeds and other food to eat later.
 - title: Garden Songbirds
   words:
   - Blackbird
@@ -32,7 +32,7 @@ puzzles:
   - Bluebird
   - Catbird
   - Tanager
-  fact: Mockingbirds can copy the songs of dozens of other birds.
+  fact: Mockingbirds often imitate the songs of other birds.
 - title: Birds of Prey
   words:
   - Hawk
@@ -49,7 +49,7 @@ puzzles:
   - Talons
   - Merlin
   - Hobby
-  fact: A diving peregrine falcon is the fastest animal on Earth.
+  fact: The peregrine falcon is the world's fastest bird, diving at over 100 miles per hour.
 - title: Owls at Night
   words:
   - Barn owl
@@ -67,7 +67,7 @@ puzzles:
   - Midnight
   - Wise
   icon: nights_stay
-  fact: Owls can't move their eyes, so they turn their whole head.
+  fact: Owls' eyes are fixed in their sockets, so they turn their whole head.
 - title: On the Pond
   words:
   - Duck
@@ -85,7 +85,7 @@ puzzles:
   - Gull
   - Loon
   icon: waves
-  fact: Ducks waterproof their feathers with oil from a gland by the tail.
+  fact: Birds use oil from a special gland to waterproof their feathers.
 - title: Building a Nest
   words:
   - Twigs
@@ -121,7 +121,7 @@ puzzles:
   - Dawn
   - Melody
   icon: music_note
-  fact: 'Birds sing most at first light: this is called the dawn chorus.'
+  fact: 'Many birds sing loudest around sunrise: this is called the dawn chorus.'
 - title: The Birdwatcher's Kit
   words:
   - Binoculars
@@ -139,7 +139,7 @@ puzzles:
   - Patience
   - Hat
   icon: visibility
-  fact: Binoculars marked 8x42 make birds look 8 times closer.
+  fact: Binoculars marked 8x42 magnify birds eight times.
 - title: Feathers and Flight
   words:
   - Wings
@@ -192,7 +192,7 @@ puzzles:
   - Berries
   - Feeder
   icon: park
-  fact: Arctic terns fly from the Arctic to the Antarctic and back each year.
+  fact: Arctic terns migrate from the Arctic to the Antarctic every year.
 - title: Birds by the Sea
   words:
   - Gull
@@ -210,7 +210,7 @@ puzzles:
   - Dunlin
   - Waves
   icon: waves
-  fact: A puffin can carry ten or more small fish in its beak at once.
+  fact: A puffin may carry a dozen small fish in its bill at once.
 - title: Woodpeckers and Friends
   words:
   - Woodpecker
@@ -227,7 +227,7 @@ puzzles:
   - Acorns
   - Ants
   - Wryneck
-  fact: Woodpeckers have long tongues that wrap around the inside of their skull.
+  fact: Woodpecker tongues are so long they wrap around the skull when not in use.
   icon: forest
 - title: The Hummingbird Garden
   words:
@@ -299,7 +299,7 @@ puzzles:
   - Glossy
   - Treetop
   - Roost
-  fact: Crows can recognize and remember individual human faces.
+  fact: Crows can recognize individual people.
 - title: Pigeons and Doves
   words:
   - Squab
@@ -351,7 +351,7 @@ puzzles:
   - Krill
   - Antarctic
   - Colony
-  fact: Penguins cannot fly, but they are superb swimmers.
+  fact: Penguins cannot fly, but emperor penguins can dive deeper than any other bird.
   icon: ac_unit
 - title: Rainforest Birds
   words:
@@ -387,7 +387,7 @@ puzzles:
   - Sunset
   - Dry
   - Lark
-  fact: A roadrunner can run at around 20 miles per hour.
+  fact: A roadrunner can run about 15 miles per hour.
   icon: wb_sunny
 - title: High in the Mountains
   words:
@@ -441,7 +441,7 @@ puzzles:
   - Songs
   - Buds
   - Rain
-  fact: In spring, many male songbirds sing to claim a territory and attract a mate.
+  fact: In spring, many songbirds sing to attract a mate and defend a territory.
   icon: local_florist
 - title: Bird Eggs
   words:
@@ -512,7 +512,7 @@ puzzles:
   - Forage
   - Gizzard
   - Grit
-  fact: Birds have no teeth, so many swallow small stones to help grind their food.
+  fact: Some birds swallow small stones or grit to help grind their food.
   icon: restaurant
 - title: A Garden for Birds
   words:
@@ -530,7 +530,7 @@ puzzles:
   - Pond
   - Perch
   - Bird table
-  fact: A shallow birdbath gives birds water to drink and bathe in all year.
+  fact: A birdbath gives birds fresh water, which they especially need in winter.
   icon: yard
 - title: Parts of a Bird
   words:
@@ -548,7 +548,7 @@ puzzles:
   - Eye ring
   - Primaries
   - Plumage
-  fact: A bird's beak is bone covered with keratin, like our fingernails.
+  fact: The outer part of a bird's beak is made of keratin, like our fingernails.
 - title: Shades of Feathers
   words:
   - Crimson
@@ -565,8 +565,7 @@ puzzles:
   - Lemon
   - Chestnut
   - Ebony
-  fact: Blue feathers get their color from tiny structures that scatter light, not
-    blue pigment.
+  fact: Blue feathers get their color from tiny structures that scatter light.
   icon: auto_awesome
 - title: Birds of the Night
   words:
@@ -584,7 +583,7 @@ puzzles:
   - Silent
   - Moths
   - Dusk
-  fact: Nightjars hunt moths and other insects at dusk and at night.
+  fact: Nightjars hunt moths and other insects at night.
   icon: nights_stay
 - title: Shorebirds
   words:
@@ -602,7 +601,7 @@ puzzles:
   - Mudflat
   - Probe
   - Waves
-  fact: Many shorebirds probe the mud with long bills to find worms and shellfish.
+  fact: Many shorebirds probe the mud with their bills to find worms and other prey.
   icon: waves
 - title: Down on the Farm
   words:
@@ -656,7 +655,7 @@ puzzles:
   - Secretary bird
   - Savanna
   - Ibis
-  fact: Weaver birds knot strands of grass into hanging nests.
+  fact: Male weaver birds build hanging nests from strips of leaves.
   icon: public
 - title: Birds of Asia
   words:
@@ -762,7 +761,7 @@ puzzles:
   - Dome
   - Hanging
   - Lining
-  fact: Some swiftlets build their nests almost entirely from their own saliva.
+  fact: Some swiftlets build their nests from their own saliva.
   icon: egg
 - title: Bird Behavior
   words:
@@ -833,7 +832,7 @@ puzzles:
   - Checklist
   - Picnic
   - Sunset
-  fact: Early morning is often the best time to see and hear birds.
+  fact: Many birds sing more at dawn and dusk, so those are great times to listen.
   icon: visibility
 - title: My Bird Journal
   words:
@@ -851,7 +850,7 @@ puzzles:
   - Habitat
   - Behavior
   - Memories
-  fact: A list of all the birds you have ever seen is called a life list.
+  fact: A life list is a birder's record of every species they have seen.
   icon: edit_note
 - title: Bird Photography
   words:
@@ -869,7 +868,7 @@ puzzles:
   - Portrait
   - Close up
   - Album
-  fact: Bird photographers often use long lenses so they can stay far away.
+  fact: Bird photographers use long lenses to keep a respectful distance.
   icon: photo_camera
 - title: Bird Words and Sayings
   words:
@@ -887,7 +886,7 @@ puzzles:
   - Pecking order
   - Feather
   - Birdbrain
-  fact: Eagles can spot small prey from very far away.
+  fact: Golden eagles can spot a rabbit from over a mile away.
   icon: menu_book
 - title: Lakes and Rivers
   words:
@@ -1065,5 +1064,5 @@ puzzles:
   - Breeze
   - Gentle
   - Smile
-  fact: The dawn chorus is often at its loudest in spring.
+  fact: The dawn chorus is at its loudest in spring.
   icon: wb_sunny

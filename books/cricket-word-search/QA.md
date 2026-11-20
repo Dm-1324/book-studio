@@ -17,11 +17,11 @@
 | PASS | Word lists: clean words and titles (letters only, titles <= 28 chars) |  |
 | PASS | Puzzle titles are all different |  |
 | FAIL | Spelling: US English throughout (book is for Amazon.com) | honour -> honor |
-| FAIL | No placeholder or TODO text left | book.yaml: 'placeholder'; listing.md: 'placeholder' |
+| PASS | No placeholder or TODO text left |  |
 | FAIL | Listing: puzzle count matches the book | listing says [20, 100], book has 20 |
 | FAIL | Listing: AI disclosure filled in |  |
 | PASS | Listing: pen name matches book.yaml |  |
 
-**FAIL** (13/17 passed)
+**FAIL** (14/17 passed)
 
 Print cost uses Amazon.com rates for this ink; confirm in KDP's pricing calculator before publishing.

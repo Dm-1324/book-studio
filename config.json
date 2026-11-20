@@ -8,7 +8,9 @@
   ],
   "fooocus": {
     "url": "http://127.0.0.1:7865",
-    "note": "Fooocus must be running (run.bat) before the cover-artist step. Use the same flags/path as on dm-1324."
+    "note": "Fooocus NOT found on this laptop (searched C:\\ and D:\\ to depth 3 and for entry_with_update.py, nothing on port 7865). Install it, then set path to its folder. Must be running (run.bat) before the cover-artist step.",
+    "path": "",
+    "installed": false
   },
   "pinterest": {
     "channel_id": "",
@@ -17,8 +19,8 @@
     "per_day": 2,
     "image_repo_dir": "D:/Projects/reel-media",
     "image_base_url": "https://raw.githubusercontent.com/Dm-1324/reel-media/main",
-    "buffer_adapter": "",
-    "adapter_path": "D:/Projects/reel-studio/tools",
-    "note": "Fill channel_id and buffer_adapter on dm-1324 from Reel Studio's Buffer code. Free plan: 3 channels, 10 queued posts per channel."
+    "buffer_adapter": "buffer_adapter:schedule_pin",
+    "adapter_path": "D:/Projects/book-studio/tools",
+    "note": "Adapter reuses D:/Projects/reel-studio/tools/upload_buffer.py. No Pinterest channel is connected in Buffer yet (only YouTube + Instagram): connect it, run python tools/buffer_adapter.py check, set channel_id. Free plan: 3 channels, 10 queued posts per channel."
   }
 }
